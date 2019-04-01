@@ -17,6 +17,11 @@ class TestGit: XCTestCase {
         XCTAssertFalse(Git.repository(url))
     }
     
+    func testRepository() {
+        XCTAssertNoThrow(try Git.create(url))
+        XCTAssertTrue(Git.repository(url))
+    }
+    
     func testCreate() {
         let root = url.appendingPathComponent(".git")
         let refs = root.appendingPathComponent("refs")
