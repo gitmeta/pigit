@@ -1,7 +1,9 @@
+import Pigit
 import AppKit
 
 @NSApplicationMain class App: NSWindow, NSApplicationDelegate {
     static private(set) weak var shared: App!
+    private var repository: Repository?
     
     func applicationShouldTerminateAfterLastWindowClosed(_: NSApplication) -> Bool { return true }
     override func cancelOperation(_: Any?) { makeFirstResponder(nil) }
@@ -14,6 +16,11 @@ import AppKit
         NSApp.delegate = self
         App.shared = self
         
+        let select = Button("Select", target: self, action: #selector(self.select))
+        let open = Button("Open", target: self, action: #selector(self.open))
+        let create = Button("Create", target: self, action: #selector(self.create))
+        let delete = Button("Delete", target: self, action: #selector(self.delete))
+        
         let border = NSView()
         border.translatesAutoresizingMaskIntoConstraints = false
         border.wantsLayer = true
@@ -21,6 +28,14 @@ import AppKit
         contentView!.addSubview(border)
         
         contentView!.addSubview(Console.shared)
+    
+        var left = contentView!.leftAnchor
+        [select, open, create, delete].forEach {
+            contentView!.addSubview($0)
+            $0.bottomAnchor.constraint(equalTo: border.topAnchor, constant: -10).isActive = true
+            $0.leftAnchor.constraint(equalTo: left, constant: 10).isActive = true
+            left = $0.rightAnchor
+        }
         
         border.topAnchor.constraint(equalTo: Console.shared.topAnchor).isActive = true
         border.heightAnchor.constraint(equalToConstant: 1).isActive = true
@@ -33,5 +48,49 @@ import AppKit
         Console.shared.rightAnchor.constraint(equalTo: contentView!.rightAnchor).isActive = true
         
         Console.shared.log("Start")
+        
+        DispatchQueue.global(qos: .background).async {
+            guard
+                let url = UserDefaults.standard.url(forKey: "url"),
+                let access = UserDefaults.standard.data(forKey: "access") else { return }
+            var stale = false
+            _ = (try? URL(resolvingBookmarkData: access, options: .withSecurityScope, bookmarkDataIsStale:
+                &stale))?.startAccessingSecurityScopedResource()
+            self.validate(url)
+        }
+    }
+    
+    private func validate(_ url: URL) {
+        Console.shared.log("Selecting: \(url.path)")
+        if Git.repository(url) {
+            Console.shared.log("This is a repository")
+        } else {
+            Console.shared.log("Not a repository")
+        }
+    }
+    
+    @objc private func select() {
+        let panel = NSOpenPanel()
+        panel.canChooseFiles = false
+        panel.canChooseDirectories = true
+        panel.begin {
+            if $0 == .OK {
+                UserDefaults.standard.set(panel.url, forKey: "url")
+                UserDefaults.standard.set((try! panel.url!.bookmarkData(options: .withSecurityScope)), forKey: "access")
+                self.validate(panel.url!)
+            }
+        }
+    }
+    
+    @objc private func open() {
+        
+    }
+    
+    @objc private func create() {
+        
+    }
+    
+    @objc private func delete() {
+        
     }
 }

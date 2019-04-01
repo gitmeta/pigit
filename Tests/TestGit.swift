@@ -52,6 +52,13 @@ class TestGit: XCTestCase {
         XCTAssertFalse(FileManager.default.fileExists(atPath: url.appendingPathComponent(".git").path))
     }
     
+    func testCreateFailsIfAlreadyExists() {
+        XCTAssertNoThrow(try Git.create(url))
+        XCTAssertThrowsError(try Git.create(url)) {
+            XCTAssertTrue(($0 as? Error.Repository) == Error.Repository.alreadyExists)
+        }
+    }
+    
     private func clear() {
         try? FileManager.default.removeItem(at: url)
     }

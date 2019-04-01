@@ -46,9 +46,9 @@ class Console: NSView {
         DispatchQueue.main.async {
             self.text.textStorage!.append({
                 $0.append(NSAttributedString(string: self.format.string(from: Date()) + " ", attributes: [
-                    .font: NSFont.light(14), .foregroundColor: NSColor(white: 1, alpha: 0.6)]))
+                    .font: NSFont.light(12), .foregroundColor: NSColor.halo]))
                 $0.append(NSAttributedString(string: message + "\n", attributes: [
-                    .font: NSFont.light(14), .foregroundColor: NSColor(white: 1, alpha: 1)]))
+                    .font: NSFont.light(12), .foregroundColor: NSColor(white: 1, alpha: 1)]))
                 return $0
                 } (NSMutableAttributedString()))
             DispatchQueue.main.async { self.scroll() }

@@ -26,6 +26,9 @@
 		20E716D12252095C0081E7FC /* SFMono-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20E716CD2252095C0081E7FC /* SFMono-Light.otf */; };
 		20E716D3225232200081E7FC /* Console.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716D2225232200081E7FC /* Console.swift */; };
 		20E716D5225233AE0081E7FC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716D4225233AE0081E7FC /* Extensions.swift */; };
+		20E716D722523C3E0081E7FC /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716D622523C3E0081E7FC /* Button.swift */; };
+		20E716D92252564E0081E7FC /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716D82252564E0081E7FC /* Error.swift */; };
+		20E716DA2252564E0081E7FC /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716D82252564E0081E7FC /* Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +92,8 @@
 		20E716CD2252095C0081E7FC /* SFMono-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFMono-Light.otf"; sourceTree = "<group>"; };
 		20E716D2225232200081E7FC /* Console.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Console.swift; sourceTree = "<group>"; };
 		20E716D4225233AE0081E7FC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		20E716D622523C3E0081E7FC /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		20E716D82252564E0081E7FC /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,8 +161,8 @@
 		20409F322251E2800055C5DE /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				20409F332251E2800055C5DE /* iOS.storyboard */,
 				20409F342251E2800055C5DE /* iOS.plist */,
+				20409F332251E2800055C5DE /* iOS.storyboard */,
 				20409F352251E2800055C5DE /* App.swift */,
 			);
 			path = iOS;
@@ -170,6 +175,7 @@
 				20409F3C2251E2890055C5DE /* Mac.plist */,
 				20409F3B2251E2890055C5DE /* Mac.storyboard */,
 				20409F3D2251E2890055C5DE /* App.swift */,
+				20E716D622523C3E0081E7FC /* Button.swift */,
 				20E716D2225232200081E7FC /* Console.swift */,
 				20E716D4225233AE0081E7FC /* Extensions.swift */,
 			);
@@ -197,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				20E716C62251F0030081E7FC /* Git.swift */,
+				20E716D82252564E0081E7FC /* Error.swift */,
 				20E716C52251F0030081E7FC /* Repository.swift */,
 			);
 			path = Pigit;
@@ -398,6 +405,7 @@
 				20409F402251E2890055C5DE /* App.swift in Sources */,
 				20E716D5225233AE0081E7FC /* Extensions.swift in Sources */,
 				20E716D3225232200081E7FC /* Console.swift in Sources */,
+				20E716D722523C3E0081E7FC /* Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20E716C92251F0030081E7FC /* Git.swift in Sources */,
+				20E716D92252564E0081E7FC /* Error.swift in Sources */,
 				20E716C72251F0030081E7FC /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +432,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20E716CA2251F0030081E7FC /* Git.swift in Sources */,
+				20E716DA2252564E0081E7FC /* Error.swift in Sources */,
 				20E716C82251F0030081E7FC /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,6 +15,7 @@ public class Git {
     }
     
     public class func create(_ url: URL) throws -> Repository {
+        guard !repository(url) else { throw Error.Repository.alreadyExists }
         let root = url.appendingPathComponent(".git")
         let objects = root.appendingPathComponent("objects")
         let refs = root.appendingPathComponent("refs")
