@@ -20,6 +20,12 @@
 		20E716C82251F0030081E7FC /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716C52251F0030081E7FC /* Repository.swift */; };
 		20E716C92251F0030081E7FC /* Git.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716C62251F0030081E7FC /* Git.swift */; };
 		20E716CA2251F0030081E7FC /* Git.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716C62251F0030081E7FC /* Git.swift */; };
+		20E716CE2252095C0081E7FC /* SFMono-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20E716CC2252095C0081E7FC /* SFMono-Bold.otf */; };
+		20E716CF2252095C0081E7FC /* SFMono-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20E716CC2252095C0081E7FC /* SFMono-Bold.otf */; };
+		20E716D02252095C0081E7FC /* SFMono-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20E716CD2252095C0081E7FC /* SFMono-Light.otf */; };
+		20E716D12252095C0081E7FC /* SFMono-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20E716CD2252095C0081E7FC /* SFMono-Light.otf */; };
+		20E716D3225232200081E7FC /* Console.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716D2225232200081E7FC /* Console.swift */; };
+		20E716D5225233AE0081E7FC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716D4225233AE0081E7FC /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +85,10 @@
 		20E716BF2251EF460081E7FC /* TestGit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGit.swift; sourceTree = "<group>"; };
 		20E716C52251F0030081E7FC /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		20E716C62251F0030081E7FC /* Git.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Git.swift; sourceTree = "<group>"; };
+		20E716CC2252095C0081E7FC /* SFMono-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFMono-Bold.otf"; sourceTree = "<group>"; };
+		20E716CD2252095C0081E7FC /* SFMono-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFMono-Light.otf"; sourceTree = "<group>"; };
+		20E716D2225232200081E7FC /* Console.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Console.swift; sourceTree = "<group>"; };
+		20E716D4225233AE0081E7FC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +148,7 @@
 				20409F322251E2800055C5DE /* iOS */,
 				20409F392251E2890055C5DE /* Mac */,
 				20E716C42251F0030081E7FC /* Pigit */,
+				20E716CB225208E60081E7FC /* Shared */,
 				20409F412251E2910055C5DE /* Tests */,
 			);
 			sourceTree = "<group>";
@@ -156,9 +167,11 @@
 			isa = PBXGroup;
 			children = (
 				20409F3A2251E2890055C5DE /* Mac.entitlements */,
-				20409F3B2251E2890055C5DE /* Mac.storyboard */,
 				20409F3C2251E2890055C5DE /* Mac.plist */,
+				20409F3B2251E2890055C5DE /* Mac.storyboard */,
 				20409F3D2251E2890055C5DE /* App.swift */,
+				20E716D2225232200081E7FC /* Console.swift */,
+				20E716D4225233AE0081E7FC /* Extensions.swift */,
 			);
 			path = Mac;
 			sourceTree = "<group>";
@@ -187,6 +200,15 @@
 				20E716C52251F0030081E7FC /* Repository.swift */,
 			);
 			path = Pigit;
+			sourceTree = "<group>";
+		};
+		20E716CB225208E60081E7FC /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				20E716CC2252095C0081E7FC /* SFMono-Bold.otf */,
+				20E716CD2252095C0081E7FC /* SFMono-Light.otf */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +365,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20E716D02252095C0081E7FC /* SFMono-Light.otf in Resources */,
+				20E716CE2252095C0081E7FC /* SFMono-Bold.otf in Resources */,
 				20409F3E2251E2890055C5DE /* Mac.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +375,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20E716D12252095C0081E7FC /* SFMono-Light.otf in Resources */,
+				20E716CF2252095C0081E7FC /* SFMono-Bold.otf in Resources */,
 				20409F362251E2810055C5DE /* iOS.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,6 +396,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				20409F402251E2890055C5DE /* App.swift in Sources */,
+				20E716D5225233AE0081E7FC /* Extensions.swift in Sources */,
+				20E716D3225232200081E7FC /* Console.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,4 +25,8 @@ public class Git {
         try Data("ref: refs/heads/master".utf8).write(to: head, options: .atomic)
         return Repository(root)
     }
+    
+    public class func delete(_ repository: Repository) throws {
+        try FileManager.default.removeItem(at: repository.url)
+    }
 }

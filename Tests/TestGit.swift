@@ -45,6 +45,13 @@ class TestGit: XCTestCase {
         XCTAssertTrue(content.contains("ref: refs/"))
     }
     
+    func testDelete() {
+        var repository: Repository!
+        XCTAssertNoThrow(try repository =  Git.create(url))
+        XCTAssertNoThrow(try Git.delete(repository))
+        XCTAssertFalse(FileManager.default.fileExists(atPath: url.appendingPathComponent(".git").path))
+    }
+    
     private func clear() {
         try? FileManager.default.removeItem(at: url)
     }
