@@ -62,10 +62,12 @@ import AppKit
     
     private func validate(_ url: URL) {
         Console.shared.log("Selecting: \(url.path)")
-        if Git.repository(url) {
-            Console.shared.log("This is a repository")
-        } else {
-            Console.shared.log("Not a repository")
+        Git.repository(url) {
+            if $0 {
+                Console.shared.log("This is a repository")
+            } else {
+                Console.shared.log("Not a repository")
+            }
         }
     }
     
