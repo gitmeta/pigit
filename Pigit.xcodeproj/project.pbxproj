@@ -7,16 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		20409F2F2251E2750055C5DE /* Git.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20409F2E2251E2750055C5DE /* Git.swift */; };
-		20409F312251E2750055C5DE /* Git.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20409F2E2251E2750055C5DE /* Git.swift */; };
 		20409F362251E2810055C5DE /* iOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20409F332251E2800055C5DE /* iOS.storyboard */; };
 		20409F382251E2810055C5DE /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20409F352251E2800055C5DE /* App.swift */; };
 		20409F3E2251E2890055C5DE /* Mac.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20409F3B2251E2890055C5DE /* Mac.storyboard */; };
 		20409F402251E2890055C5DE /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20409F3D2251E2890055C5DE /* App.swift */; };
-		20409F442251E2920055C5DE /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20409F422251E2910055C5DE /* Tests.swift */; };
-		20802C412251E9A6007D6C3A /* libPigitMac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20802C3D2251E362007D6C3A /* libPigitMac.a */; };
-		20802C422251E9B5007D6C3A /* libPigitiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20802C3E2251E362007D6C3A /* libPigitiOS.a */; };
-		20802C472251E9C9007D6C3A /* libPigitMac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20802C3D2251E362007D6C3A /* libPigitMac.a */; };
+		20409F442251E2920055C5DE /* TestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20409F422251E2910055C5DE /* TestRepository.swift */; };
+		20802C412251E9A6007D6C3A /* libPigit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20802C3D2251E362007D6C3A /* libPigit.a */; };
+		20802C422251E9B5007D6C3A /* libPigit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20802C3E2251E362007D6C3A /* libPigit.a */; };
+		20802C472251E9C9007D6C3A /* libPigit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20802C3D2251E362007D6C3A /* libPigit.a */; };
+		20E716C02251EF460081E7FC /* TestGit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716BF2251EF460081E7FC /* TestGit.swift */; };
+		20E716C72251F0030081E7FC /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716C52251F0030081E7FC /* Repository.swift */; };
+		20E716C82251F0030081E7FC /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716C52251F0030081E7FC /* Repository.swift */; };
+		20E716C92251F0030081E7FC /* Git.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716C62251F0030081E7FC /* Git.swift */; };
+		20E716CA2251F0030081E7FC /* Git.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716C62251F0030081E7FC /* Git.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +59,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		20409F2E2251E2750055C5DE /* Git.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Git.swift; sourceTree = "<group>"; };
 		20409F302251E2750055C5DE /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20409F332251E2800055C5DE /* iOS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iOS.storyboard; sourceTree = "<group>"; };
 		20409F342251E2800055C5DE /* iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iOS.plist; sourceTree = "<group>"; };
@@ -65,15 +67,18 @@
 		20409F3B2251E2890055C5DE /* Mac.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mac.storyboard; sourceTree = "<group>"; };
 		20409F3C2251E2890055C5DE /* Mac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Mac.plist; sourceTree = "<group>"; };
 		20409F3D2251E2890055C5DE /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		20409F422251E2910055C5DE /* Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		20409F422251E2910055C5DE /* TestRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRepository.swift; sourceTree = "<group>"; };
 		20409F432251E2910055C5DE /* Tests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tests.plist; sourceTree = "<group>"; };
 		20409F462251E2A40055C5DE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		20409F472251E2A40055C5DE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		20409F482251E2A40055C5DE /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		20802C3B2251E362007D6C3A /* Pigit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pigit.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		20802C3C2251E362007D6C3A /* Pigit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pigit.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		20802C3D2251E362007D6C3A /* libPigitMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPigitMac.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		20802C3E2251E362007D6C3A /* libPigitiOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPigitiOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		20802C3B2251E362007D6C3A /* PigitMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PigitMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		20802C3C2251E362007D6C3A /* PigitiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PigitiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		20802C3D2251E362007D6C3A /* libPigit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPigit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		20802C3E2251E362007D6C3A /* libPigit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPigit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		20E716BF2251EF460081E7FC /* TestGit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGit.swift; sourceTree = "<group>"; };
+		20E716C52251F0030081E7FC /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		20E716C62251F0030081E7FC /* Git.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Git.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20802C472251E9C9007D6C3A /* libPigitMac.a in Frameworks */,
+				20802C472251E9C9007D6C3A /* libPigit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20802C422251E9B5007D6C3A /* libPigitiOS.a in Frameworks */,
+				20802C422251E9B5007D6C3A /* libPigit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,7 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20802C412251E9A6007D6C3A /* libPigitMac.a in Frameworks */,
+				20802C412251E9A6007D6C3A /* libPigit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,26 +128,18 @@
 			children = (
 				20409F472251E2A40055C5DE /* .gitignore */,
 				20409F482251E2A40055C5DE /* LICENSE */,
-				20802C3E2251E362007D6C3A /* libPigitiOS.a */,
-				20802C3D2251E362007D6C3A /* libPigitMac.a */,
-				20802C3B2251E362007D6C3A /* Pigit.app */,
-				20802C3C2251E362007D6C3A /* Pigit.app */,
+				20802C3E2251E362007D6C3A /* libPigit.a */,
+				20802C3D2251E362007D6C3A /* libPigit.a */,
+				20802C3C2251E362007D6C3A /* PigitiOS.app */,
+				20802C3B2251E362007D6C3A /* PigitMac.app */,
 				20409F462251E2A40055C5DE /* README.md */,
 				20409F302251E2750055C5DE /* Tests.xctest */,
 				20802C3F2251E559007D6C3A /* Frameworks */,
-				20409F2D2251E2750055C5DE /* Git */,
 				20409F322251E2800055C5DE /* iOS */,
 				20409F392251E2890055C5DE /* Mac */,
+				20E716C42251F0030081E7FC /* Pigit */,
 				20409F412251E2910055C5DE /* Tests */,
 			);
-			sourceTree = "<group>";
-		};
-		20409F2D2251E2750055C5DE /* Git */ = {
-			isa = PBXGroup;
-			children = (
-				20409F2E2251E2750055C5DE /* Git.swift */,
-			);
-			path = Git;
 			sourceTree = "<group>";
 		};
 		20409F322251E2800055C5DE /* iOS */ = {
@@ -169,8 +166,9 @@
 		20409F412251E2910055C5DE /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				20409F422251E2910055C5DE /* Tests.swift */,
 				20409F432251E2910055C5DE /* Tests.plist */,
+				20E716BF2251EF460081E7FC /* TestGit.swift */,
+				20409F422251E2910055C5DE /* TestRepository.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -180,6 +178,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		20E716C42251F0030081E7FC /* Pigit */ = {
+			isa = PBXGroup;
+			children = (
+				20E716C62251F0030081E7FC /* Git.swift */,
+				20E716C52251F0030081E7FC /* Repository.swift */,
+			);
+			path = Pigit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,7 +217,7 @@
 			);
 			name = Mac;
 			productName = Mac;
-			productReference = 20802C3B2251E362007D6C3A /* Pigit.app */;
+			productReference = 20802C3B2251E362007D6C3A /* PigitMac.app */;
 			productType = "com.apple.product-type.application";
 		};
 		20409EF32251DFC70055C5DE /* iOS */ = {
@@ -228,7 +235,7 @@
 			);
 			name = iOS;
 			productName = iOS;
-			productReference = 20802C3C2251E362007D6C3A /* Pigit.app */;
+			productReference = 20802C3C2251E362007D6C3A /* PigitiOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 		20409F092251E0220055C5DE /* PigitMac */ = {
@@ -245,7 +252,7 @@
 			);
 			name = PigitMac;
 			productName = PigitMac;
-			productReference = 20802C3D2251E362007D6C3A /* libPigitMac.a */;
+			productReference = 20802C3D2251E362007D6C3A /* libPigit.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		20409F162251E0380055C5DE /* PigitiOS */ = {
@@ -262,7 +269,7 @@
 			);
 			name = PigitiOS;
 			productName = PigitiOS;
-			productReference = 20802C3E2251E362007D6C3A /* libPigitiOS.a */;
+			productReference = 20802C3E2251E362007D6C3A /* libPigit.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		20409F212251E0540055C5DE /* Tests */ = {
@@ -378,7 +385,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20409F2F2251E2750055C5DE /* Git.swift in Sources */,
+				20E716C92251F0030081E7FC /* Git.swift in Sources */,
+				20E716C72251F0030081E7FC /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,7 +394,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20409F312251E2750055C5DE /* Git.swift in Sources */,
+				20E716CA2251F0030081E7FC /* Git.swift in Sources */,
+				20E716C82251F0030081E7FC /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +403,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20409F442251E2920055C5DE /* Tests.swift in Sources */,
+				20E716C02251EF460081E7FC /* TestGit.swift in Sources */,
+				20409F442251E2920055C5DE /* TestRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +523,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = pigit.Mac;
+				PRODUCT_NAME = PigitMac;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -574,6 +585,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = pigit.Mac;
+				PRODUCT_NAME = PigitMac;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -640,6 +652,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = pigit.iOS;
+				PRODUCT_NAME = PigitiOS;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -700,6 +713,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = pigit.iOS;
+				PRODUCT_NAME = PigitiOS;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -763,7 +777,6 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 			};
@@ -817,7 +830,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 			};
@@ -878,7 +890,6 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -935,7 +946,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
