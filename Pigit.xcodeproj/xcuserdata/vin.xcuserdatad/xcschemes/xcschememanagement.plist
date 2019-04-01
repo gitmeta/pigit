@@ -9,16 +9,6 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>PigitMac.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
-		<key>PigitiOS.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
-		</dict>
 		<key>Tests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -28,6 +18,34 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>20409EDE2251DFA70055C5DE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>20409EF32251DFC70055C5DE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>20409F092251E0220055C5DE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>20409F162251E0380055C5DE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>20409F212251E0540055C5DE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
