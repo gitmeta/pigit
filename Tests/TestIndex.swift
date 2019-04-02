@@ -27,6 +27,9 @@ class TestIndex: XCTestCase {
     func testIndex() {
         try! (try! Data(contentsOf: Bundle(for: TestIndex.self).url(forResource: "index0", withExtension: nil)!)).write(to:
             url.appendingPathComponent(".git/index"))
-        XCTAssertNotNil(Index.load(url))
+        let index = Index.load(url)
+        XCTAssertNotNil(index)
+        XCTAssertEqual(2, index?.version)
+        XCTAssertEqual(2, index?.entries.count)
     }
 }

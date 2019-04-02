@@ -7,8 +7,10 @@ struct Index {
         var index = Index()
         guard
             let data = try? Data(contentsOf: url.appendingPathComponent(".git/index")),
-            header(data)
+            header(data),
+            let version = Int(number(data.subdata(in: 4 ..< 8)))
         else { return nil }
+        index.version = version
         return index
     }
     
