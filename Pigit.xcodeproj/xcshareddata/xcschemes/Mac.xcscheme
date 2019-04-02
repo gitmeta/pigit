@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "20409EDE2251DFA70055C5DE"
-               BuildableName = "Pigit.app"
+               BuildableName = "PigitMac.app"
                BlueprintName = "Mac"
                ReferencedContainer = "container:Pigit.xcodeproj">
             </BuildableReference>
@@ -44,7 +44,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "20409EDE2251DFA70055C5DE"
-            BuildableName = "Pigit.app"
+            BuildableName = "PigitMac.app"
             BlueprintName = "Mac"
             ReferencedContainer = "container:Pigit.xcodeproj">
          </BuildableReference>
@@ -67,7 +67,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "20409EDE2251DFA70055C5DE"
-            BuildableName = "Pigit.app"
+            BuildableName = "PigitMac.app"
             BlueprintName = "Mac"
             ReferencedContainer = "container:Pigit.xcodeproj">
          </BuildableReference>
@@ -86,7 +86,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "20409EDE2251DFA70055C5DE"
-            BuildableName = "Pigit.app"
+            BuildableName = "PigitMac.app"
             BlueprintName = "Mac"
             ReferencedContainer = "container:Pigit.xcodeproj">
          </BuildableReference>

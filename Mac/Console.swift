@@ -1,11 +1,10 @@
 import AppKit
 
 class Console: NSView {
-    static let shared = Console()
     private weak var text: NSTextView!
     private let format = DateFormatter()
     
-    private init() {
+    init() {
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -43,7 +42,8 @@ class Console: NSView {
     }
     
     func log(_ message: String) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
             self.text.textStorage!.append({
                 $0.append(NSAttributedString(string: self.format.string(from: Date()) + " ", attributes: [
                     .font: NSFont.light(12), .foregroundColor: NSColor.halo]))
@@ -51,7 +51,7 @@ class Console: NSView {
                     .font: NSFont.light(12), .foregroundColor: NSColor(white: 1, alpha: 1)]))
                 return $0
                 } (NSMutableAttributedString()))
-            DispatchQueue.main.async { self.scroll() }
+            DispatchQueue.main.async { [weak self] in self?.scroll() }
         }
     }
     

@@ -2,7 +2,7 @@ import Pigit
 import AppKit
 
 @NSApplicationMain class App: NSWindow, NSApplicationDelegate {
-    static private(set) weak var shared: App!
+    private weak var console: Console!
     private var repository: Repository?
     
     func applicationShouldTerminateAfterLastWindowClosed(_: NSApplication) -> Bool { return true }
@@ -14,7 +14,6 @@ import AppKit
         UserDefaults.standard.set(false, forKey: "NSFullScreenMenuItemEverywhere")
         backgroundColor = .black
         NSApp.delegate = self
-        App.shared = self
         
         let select = Button("Select", target: self, action: #selector(self.select))
         let open = Button("Open", target: self, action: #selector(self.open))
@@ -27,8 +26,10 @@ import AppKit
         border.layer!.backgroundColor = NSColor(white: 1, alpha: 0.3).cgColor
         contentView!.addSubview(border)
         
-        contentView!.addSubview(Console.shared)
-    
+        let console = Console()
+        contentView!.addSubview(console)
+        self.console = console
+        
         var left = contentView!.leftAnchor
         [select, open, create, delete].forEach {
             contentView!.addSubview($0)
@@ -37,17 +38,17 @@ import AppKit
             left = $0.rightAnchor
         }
         
-        border.topAnchor.constraint(equalTo: Console.shared.topAnchor).isActive = true
+        border.topAnchor.constraint(equalTo: console.topAnchor).isActive = true
         border.heightAnchor.constraint(equalToConstant: 1).isActive = true
         border.leftAnchor.constraint(equalTo: contentView!.leftAnchor, constant: 1).isActive = true
         border.rightAnchor.constraint(equalTo: contentView!.rightAnchor, constant: -1).isActive = true
         
-        Console.shared.topAnchor.constraint(equalTo: contentView!.topAnchor, constant: 80).isActive = true
-        Console.shared.bottomAnchor.constraint(equalTo: contentView!.bottomAnchor).isActive = true
-        Console.shared.leftAnchor.constraint(equalTo: contentView!.leftAnchor).isActive = true
-        Console.shared.rightAnchor.constraint(equalTo: contentView!.rightAnchor).isActive = true
+        console.topAnchor.constraint(equalTo: contentView!.topAnchor, constant: 80).isActive = true
+        console.bottomAnchor.constraint(equalTo: contentView!.bottomAnchor).isActive = true
+        console.leftAnchor.constraint(equalTo: contentView!.leftAnchor).isActive = true
+        console.rightAnchor.constraint(equalTo: contentView!.rightAnchor).isActive = true
         
-        Console.shared.log("Start")
+        console.log("Start")
         
         DispatchQueue.global(qos: .background).async {
             guard
@@ -61,12 +62,12 @@ import AppKit
     }
     
     private func validate(_ url: URL) {
-        Console.shared.log("Selecting: \(url.path)")
+        console.log("Selecting: \(url.path)")
         Git.repository(url) {
             if $0 {
-                Console.shared.log("This is a repository")
+                self.console.log("This is a repository")
             } else {
-                Console.shared.log("Not a repository")
+                self.console.log("Not a repository")
             }
         }
     }
@@ -77,22 +78,42 @@ import AppKit
         panel.canChooseDirectories = true
         panel.begin {
             if $0 == .OK {
-                UserDefaults.standard.set(panel.url, forKey: "url")
-                UserDefaults.standard.set((try! panel.url!.bookmarkData(options: .withSecurityScope)), forKey: "access")
-                self.validate(panel.url!)
+                DispatchQueue.global(qos: .background).async {
+                    UserDefaults.standard.set(panel.url, forKey: "url")
+                    UserDefaults.standard.set((try! panel.url!.bookmarkData(options: .withSecurityScope)), forKey: "access")
+                    self.validate(panel.url!)
+                }
             }
         }
     }
     
     @objc private func open() {
-        
+        guard let url = UserDefaults.standard.url(forKey: "url") else { return }
+        Git.open(url, error: {
+            self.console.log($0.localizedDescription)
+        }) {
+            self.repository = $0
+            self.console.log("Opened: \($0.url.path)")
+        }
     }
     
     @objc private func create() {
-        
+        guard let url = UserDefaults.standard.url(forKey: "url") else { return }
+        Git.create(url, error: {
+            self.console.log($0.localizedDescription)
+        }) {
+            self.repository = $0
+            self.console.log("Created: \($0.url.path)")
+        }
     }
     
     @objc private func delete() {
-        
+        guard let repository = self.repository else { return }
+        Git.delete(repository, error: {
+            self.console.log($0.localizedDescription)
+        }) {
+            self.console.log("Deleted: \(repository.url.path)")
+            self.repository = nil
+        }
     }
 }

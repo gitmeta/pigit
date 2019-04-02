@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "20409EF32251DFC70055C5DE"
-               BuildableName = "Pigit.app"
+               BuildableName = "PigitiOS.app"
                BlueprintName = "iOS"
                ReferencedContainer = "container:Pigit.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "20409EF32251DFC70055C5DE"
-            BuildableName = "Pigit.app"
+            BuildableName = "PigitiOS.app"
             BlueprintName = "iOS"
             ReferencedContainer = "container:Pigit.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "20409EF32251DFC70055C5DE"
-            BuildableName = "Pigit.app"
+            BuildableName = "PigitiOS.app"
             BlueprintName = "iOS"
             ReferencedContainer = "container:Pigit.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "20409EF32251DFC70055C5DE"
-            BuildableName = "Pigit.app"
+            BuildableName = "PigitiOS.app"
             BlueprintName = "iOS"
             ReferencedContainer = "container:Pigit.xcodeproj">
          </BuildableReference>

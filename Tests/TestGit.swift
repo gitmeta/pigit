@@ -85,9 +85,31 @@ class TestGit: XCTestCase {
             Git.create(self.url, error: {
                 XCTAssertEqual(Thread.main, Thread.current)
                 
-                XCTAssertTrue(($0 as? GitError.Repository) == GitError.Repository.alreadyExists)
+                XCTAssertTrue(($0 as? Failure.Repository) == Failure.Repository.duplicating)
                 expect.fulfill()
             })
+        }
+        waitForExpectations(timeout: 1, handler: nil)
+    }
+    
+    func testOpenFails() {
+        let expect = expectation(description: String())
+        Git.open(url, error: { _ in
+            XCTAssertEqual(Thread.main, Thread.current)
+            
+            expect.fulfill()
+        })
+        waitForExpectations(timeout: 1, handler: nil)
+    }
+    
+    func testOpen() {
+        let expect = expectation(description: String())
+        Git.create(url) { _ in
+            Git.open(self.url) { _ in
+                XCTAssertEqual(Thread.main, Thread.current)
+                
+                expect.fulfill()
+            }
         }
         waitForExpectations(timeout: 1, handler: nil)
     }

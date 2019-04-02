@@ -27,8 +27,8 @@
 		20E716D3225232200081E7FC /* Console.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716D2225232200081E7FC /* Console.swift */; };
 		20E716D5225233AE0081E7FC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716D4225233AE0081E7FC /* Extensions.swift */; };
 		20E716D722523C3E0081E7FC /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716D622523C3E0081E7FC /* Button.swift */; };
-		20E716D92252564E0081E7FC /* GitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716D82252564E0081E7FC /* GitError.swift */; };
-		20E716DA2252564E0081E7FC /* GitError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716D82252564E0081E7FC /* GitError.swift */; };
+		20E716D92252564E0081E7FC /* Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716D82252564E0081E7FC /* Failure.swift */; };
+		20E716DA2252564E0081E7FC /* Failure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716D82252564E0081E7FC /* Failure.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +72,6 @@
 		20409F332251E2800055C5DE /* iOS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iOS.storyboard; sourceTree = "<group>"; };
 		20409F342251E2800055C5DE /* iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iOS.plist; sourceTree = "<group>"; };
 		20409F352251E2800055C5DE /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		20409F3A2251E2890055C5DE /* Mac.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Mac.entitlements; sourceTree = "<group>"; };
 		20409F3B2251E2890055C5DE /* Mac.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mac.storyboard; sourceTree = "<group>"; };
 		20409F3C2251E2890055C5DE /* Mac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Mac.plist; sourceTree = "<group>"; };
 		20409F3D2251E2890055C5DE /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -85,6 +84,7 @@
 		20802C3C2251E362007D6C3A /* PigitiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PigitiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20802C3D2251E362007D6C3A /* libPigit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPigit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		20802C3E2251E362007D6C3A /* libPigit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPigit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		20DB2A52225344E100AE5D99 /* Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mac.entitlements; sourceTree = "<group>"; };
 		20E716BF2251EF460081E7FC /* TestGit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGit.swift; sourceTree = "<group>"; };
 		20E716C52251F0030081E7FC /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		20E716C62251F0030081E7FC /* Git.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Git.swift; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		20E716D2225232200081E7FC /* Console.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Console.swift; sourceTree = "<group>"; };
 		20E716D4225233AE0081E7FC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		20E716D622523C3E0081E7FC /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		20E716D82252564E0081E7FC /* GitError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitError.swift; sourceTree = "<group>"; };
+		20E716D82252564E0081E7FC /* Failure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Failure.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +171,7 @@
 		20409F392251E2890055C5DE /* Mac */ = {
 			isa = PBXGroup;
 			children = (
-				20409F3A2251E2890055C5DE /* Mac.entitlements */,
+				20DB2A52225344E100AE5D99 /* Mac.entitlements */,
 				20409F3C2251E2890055C5DE /* Mac.plist */,
 				20409F3B2251E2890055C5DE /* Mac.storyboard */,
 				20409F3D2251E2890055C5DE /* App.swift */,
@@ -203,7 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				20E716C62251F0030081E7FC /* Git.swift */,
-				20E716D82252564E0081E7FC /* GitError.swift */,
+				20E716D82252564E0081E7FC /* Failure.swift */,
 				20E716C52251F0030081E7FC /* Repository.swift */,
 			);
 			path = Pigit;
@@ -330,6 +330,11 @@
 				TargetAttributes = {
 					20409EDE2251DFA70055C5DE = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					20409EF32251DFC70055C5DE = {
 						CreatedOnToolsVersion = 10.2;
@@ -422,7 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20E716C92251F0030081E7FC /* Git.swift in Sources */,
-				20E716D92252564E0081E7FC /* GitError.swift in Sources */,
+				20E716D92252564E0081E7FC /* Failure.swift in Sources */,
 				20E716C72251F0030081E7FC /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,7 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20E716CA2251F0030081E7FC /* Git.swift in Sources */,
-				20E716DA2252564E0081E7FC /* GitError.swift in Sources */,
+				20E716DA2252564E0081E7FC /* Failure.swift in Sources */,
 				20E716C82251F0030081E7FC /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

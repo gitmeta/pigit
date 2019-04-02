@@ -23,7 +23,7 @@ public class Git {
         queue.async {
             repository(url) {
                 if $0 {
-                    error?(GitError.Repository.alreadyExists)
+                    error?(Failure.Repository.duplicating)
                 } else {
                     queue.async {
                         do {
@@ -35,7 +35,7 @@ public class Git {
                             try FileManager.default.createDirectory(at: refs, withIntermediateDirectories: false)
                             try FileManager.default.createDirectory(at: objects, withIntermediateDirectories: false)
                             try Data("ref: refs/heads/master".utf8).write(to: head, options: .atomic)
-                            DispatchQueue.main.async { result?(Repository(root)) }
+                            open(url, error: error, result: result)
                         } catch let exception {
                             DispatchQueue.main.async { error?(exception) }
                         }
@@ -45,10 +45,22 @@ public class Git {
         }
     }
     
+    public class func open(_ url: URL, error: ((Error) -> Void)? = nil, result: ((Repository) -> Void)? = nil) {
+        queue.async {
+            repository(url) {
+                if $0 {
+                    DispatchQueue.main.async { result?(Repository(url)) }
+                } else {
+                    DispatchQueue.main.async { error?(Failure.Repository.invalid) }
+                }
+            }
+        }
+    }
+    
     public class func delete(_ repository: Repository, error: ((Error) -> Void)? = nil, result: (() -> Void)? = nil) {
         queue.async {
             do {
-                try FileManager.default.removeItem(at: repository.url)
+                try FileManager.default.removeItem(at: repository.url.appendingPathComponent(".git"))
                 DispatchQueue.main.async {
                     result?()
                 }
