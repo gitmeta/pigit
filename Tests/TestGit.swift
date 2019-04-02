@@ -14,7 +14,7 @@ class TestGit: XCTestCase {
     }
     
     func testRepositoryFails() {
-        let expect = expectation(description: String())
+        let expect = expectation(description: "")
         Git.repository(url) {
             XCTAssertEqual(Thread.main, Thread.current)
             
@@ -25,7 +25,7 @@ class TestGit: XCTestCase {
     }
     
     func testRepository() {
-        let expect = expectation(description: String())
+        let expect = expectation(description: "")
         Git.create(url) { _ in
             Git.repository(self.url) {
                 XCTAssertEqual(Thread.main, Thread.current)
@@ -38,7 +38,7 @@ class TestGit: XCTestCase {
     }
     
     func testCreate() {
-        let expect = expectation(description: String())
+        let expect = expectation(description: "")
         let root = url.appendingPathComponent(".git")
         let refs = root.appendingPathComponent("refs")
         let objects = root.appendingPathComponent("objects")
@@ -67,7 +67,7 @@ class TestGit: XCTestCase {
     }
     
     func testDelete() {
-        let expect = expectation(description: String())
+        let expect = expectation(description: "")
         Git.create(url) {
             Git.delete($0) {
                 XCTAssertEqual(Thread.main, Thread.current)
@@ -80,12 +80,12 @@ class TestGit: XCTestCase {
     }
     
     func testCreateFailsIfAlreadyExists() {
-        let expect = expectation(description: String())
+        let expect = expectation(description: "")
         Git.create(url) { _ in
             Git.create(self.url, error: {
                 XCTAssertEqual(Thread.main, Thread.current)
                 
-                XCTAssertTrue(($0 as? Failure.Repository) == Failure.Repository.duplicating)
+                XCTAssertNotNil($0 as? Failure)
                 expect.fulfill()
             })
         }
@@ -93,7 +93,7 @@ class TestGit: XCTestCase {
     }
     
     func testOpenFails() {
-        let expect = expectation(description: String())
+        let expect = expectation(description: "")
         Git.open(url, error: { _ in
             XCTAssertEqual(Thread.main, Thread.current)
             
@@ -103,7 +103,7 @@ class TestGit: XCTestCase {
     }
     
     func testOpen() {
-        let expect = expectation(description: String())
+        let expect = expectation(description: "")
         Git.create(url) { _ in
             Git.open(self.url) { _ in
                 XCTAssertEqual(Thread.main, Thread.current)

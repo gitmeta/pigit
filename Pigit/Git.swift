@@ -1,7 +1,7 @@
 import Foundation
 
 public class Git {
-    private static let queue = DispatchQueue(label: String(), qos: .background, target: .global(qos: .background))
+    private static let queue = DispatchQueue(label: "", qos: .background, target: .global(qos: .background))
     
     public class func repository(_ url: URL, result: @escaping((Bool) -> Void)) {
         queue.async {

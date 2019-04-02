@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		201739B122535E8E00E7EB9D /* TestHasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201739B022535E8E00E7EB9D /* TestHasher.swift */; };
+		201739B3225361CB00E7EB9D /* Hasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201739B2225361CB00E7EB9D /* Hasher.swift */; };
+		201739B4225361CB00E7EB9D /* Hasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201739B2225361CB00E7EB9D /* Hasher.swift */; };
 		20409F362251E2810055C5DE /* iOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20409F332251E2800055C5DE /* iOS.storyboard */; };
 		20409F382251E2810055C5DE /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20409F352251E2800055C5DE /* App.swift */; };
 		20409F3E2251E2890055C5DE /* Mac.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20409F3B2251E2890055C5DE /* Mac.storyboard */; };
@@ -68,6 +71,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		201739B022535E8E00E7EB9D /* TestHasher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHasher.swift; sourceTree = "<group>"; };
+		201739B2225361CB00E7EB9D /* Hasher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hasher.swift; sourceTree = "<group>"; };
 		20409F302251E2750055C5DE /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20409F332251E2800055C5DE /* iOS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iOS.storyboard; sourceTree = "<group>"; };
 		20409F342251E2800055C5DE /* iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iOS.plist; sourceTree = "<group>"; };
@@ -187,6 +192,7 @@
 			children = (
 				20409F432251E2910055C5DE /* Tests.plist */,
 				20E716BF2251EF460081E7FC /* TestGit.swift */,
+				201739B022535E8E00E7EB9D /* TestHasher.swift */,
 				20409F422251E2910055C5DE /* TestRepository.swift */,
 			);
 			path = Tests;
@@ -202,9 +208,10 @@
 		20E716C42251F0030081E7FC /* Pigit */ = {
 			isa = PBXGroup;
 			children = (
-				20E716C62251F0030081E7FC /* Git.swift */,
 				20E716D82252564E0081E7FC /* Failure.swift */,
+				20E716C62251F0030081E7FC /* Git.swift */,
 				20E716C52251F0030081E7FC /* Repository.swift */,
+				201739B2225361CB00E7EB9D /* Hasher.swift */,
 			);
 			path = Pigit;
 			sourceTree = "<group>";
@@ -427,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20E716C92251F0030081E7FC /* Git.swift in Sources */,
+				201739B3225361CB00E7EB9D /* Hasher.swift in Sources */,
 				20E716D92252564E0081E7FC /* Failure.swift in Sources */,
 				20E716C72251F0030081E7FC /* Repository.swift in Sources */,
 			);
@@ -437,6 +445,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20E716CA2251F0030081E7FC /* Git.swift in Sources */,
+				201739B4225361CB00E7EB9D /* Hasher.swift in Sources */,
 				20E716DA2252564E0081E7FC /* Failure.swift in Sources */,
 				20E716C82251F0030081E7FC /* Repository.swift in Sources */,
 			);
@@ -446,6 +455,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				201739B122535E8E00E7EB9D /* TestHasher.swift in Sources */,
 				20E716C02251EF460081E7FC /* TestGit.swift in Sources */,
 				20409F442251E2920055C5DE /* TestRepository.swift in Sources */,
 			);
