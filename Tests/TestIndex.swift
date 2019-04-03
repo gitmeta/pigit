@@ -30,6 +30,6 @@ class TestIndex: XCTestCase {
         let index = Index.load(url)
         XCTAssertNotNil(index)
         XCTAssertEqual(2, index?.version)
-        XCTAssertEqual(2, index?.entries.count)
+        XCTAssertEqual(1, index?.entries.count)
     }
 }
