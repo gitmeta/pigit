@@ -6,7 +6,7 @@ class TestIndex: XCTestCase {
     
     override func setUp() {
         url = URL(fileURLWithPath: NSTemporaryDirectory())
-        try! FileManager.default.createDirectory(at: url.appendingPathComponent(".git"), withIntermediateDirectories: false)
+        try? FileManager.default.createDirectory(at: url.appendingPathComponent(".git"), withIntermediateDirectories: false)
     }
     
     override func tearDown() {

@@ -27,7 +27,7 @@ struct Index {
         var entries = [Entry]()
         var byte = 12
         for _ in 0 ..< count {
-            let createdSeconds = number(data.subdata(in: byte ..< byte + 4))
+            let createdSeconds = Int(number(data.subdata(in: byte ..< byte + 4)))
             byte += 4
             let createdNano = number(data.subdata(in: byte ..< byte + 4))
             byte += 4
@@ -41,6 +41,28 @@ struct Index {
             byte += 4
             let mode = number(data.subdata(in: byte ..< byte + 4))
             byte += 4
+            let userId = number(data.subdata(in: byte ..< byte + 4))
+            byte += 4
+            let groupId = number(data.subdata(in: byte ..< byte + 4))
+            byte += 4
+            let fileContentLength = string(data.subdata(in: byte ..< byte + 4))
+            byte += 4
+            let hash = number(data.subdata(in: byte ..< byte + 20))
+            byte += 20
+            let flags1 = number(data.subdata(in: byte ..< byte + 2))
+            byte += 2
+//            let flags2 = number(data.subdata(in: byte ..< byte + 2))
+//            byte += 2
+            var name = String()
+            var c = String()
+            repeat {
+                c = string(data.subdata(in: byte ..< byte + 1))
+                name += c
+                byte += 1
+            } while(c != "\u{0000}")
+            print(name)
+            print(hash)
+            print(fileContentLength)
             print(mode)
         }
         return entries
