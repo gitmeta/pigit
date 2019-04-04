@@ -7,18 +7,18 @@ struct Index {
     static func load(_ url: URL) -> Index? {
         var index = Index()
         guard
-            let data = try? Data(contentsOf: url.appendingPathComponent(".git/index")),
-            header(data),
-            let version = Int(number(data.subdata(in: 4 ..< 8))),
-            let entries = try? entries(data)
+            let parse = Parse(url.appendingPathComponent(".git/index")),
+            "DIRC" == (try? parse.string(4)),
+            let version = try? parse.number(4),
+            let entries = try? parse.number(4)
         else { return nil }
         index.version = version
         index.entries = entries
         return index
     }
     
-    private static func header(_ data: Data) -> Bool {
-        guard data.count > 12, string(data.subdata(in: 0 ..< 4)) == "DIRC" else { return false }
+    private static func header(_ parse: Parse) -> Bool {
+        guard (try? parse.string(4)) == "DIRC" else { return false }
         return true
     }
     
@@ -27,10 +27,25 @@ struct Index {
         var entries = [Entry]()
         var byte = 12
         for _ in 0 ..< count {
-            let createdSeconds = Int(number(data.subdata(in: byte ..< byte + 4)))
+            
+            print(Date(timeIntervalSince1970: TimeInterval(Int(number(data.subdata(in: byte ..< byte + 4)), radix: 16)!)))
+            print(number(data.subdata(in: byte + 4 ..< byte + 8)))
+//            debugPrint(number(data.subdata(in: byte ..< byte + 8)))
+//            let createdSeconds = number()
+//            debugPrint(createdSeconds)
+            break
+            debugPrint(data.subdata(in: byte ..< byte + 4).printableAscii)
+            debugPrint(number(data.subdata(in: byte ..< byte + 4)))
+            
             byte += 4
+            
+            
+            
             let createdNano = number(data.subdata(in: byte ..< byte + 4))
             byte += 4
+            
+            print(data.subdata(in: byte ..< byte + 4).withUnsafeBytes { $0.baseAddress!.bindMemory(to: UInt32.self, capacity: 1).pointee })
+            
             let modifiedSeconds = number(data.subdata(in: byte ..< byte + 4))
             byte += 4
             let modifiedNano = number(data.subdata(in: byte ..< byte + 4))
@@ -49,8 +64,18 @@ struct Index {
             byte += 4
             let hash = number(data.subdata(in: byte ..< byte + 20))
             byte += 20
-            let flags1 = number(data.subdata(in: byte ..< byte + 2))
+//            let flags1 = Int(number(data.subdata(in: byte ..< byte + 2)))
+//            byte += 2
+            
+//            let value = data.withUnsafeBytes {
+//                $0.baseAddress!.bindMemory(to: Double.self, capacity: 1).pointee
+//            }
+            
+//            print(data.subdata(in: byte ..< byte + 1).withUnsafeBytes { $0.baseAddress!.bindMemory(to: UInt8.self, capacity: 1).pointee })
+            
+            print(data.subdata(in: byte + 1 ..< byte + 2).withUnsafeBytes { $0.baseAddress!.bindMemory(to: Bool.self, capacity: 1).pointee })
             byte += 2
+            
 //            let flags2 = number(data.subdata(in: byte ..< byte + 2))
 //            byte += 2
             var name = String()
@@ -67,7 +92,4 @@ struct Index {
         }
         return entries
     }
-    
-    private static func string(_ data: Data) -> String { return String(decoding: data, as: UTF8.self) }
-    private static func number(_ data: Data) -> String { return data.map { String(format: "%02hhx", $0) }.joined() }
 }

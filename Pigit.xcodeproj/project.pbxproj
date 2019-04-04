@@ -10,6 +10,8 @@
 		201739B122535E8E00E7EB9D /* TestHasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201739B022535E8E00E7EB9D /* TestHasher.swift */; };
 		201739B3225361CB00E7EB9D /* Hasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201739B2225361CB00E7EB9D /* Hasher.swift */; };
 		201739B4225361CB00E7EB9D /* Hasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201739B2225361CB00E7EB9D /* Hasher.swift */; };
+		201B21E822561938005F3ED9 /* Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201B21E722561938005F3ED9 /* Parse.swift */; };
+		201B21E922561938005F3ED9 /* Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201B21E722561938005F3ED9 /* Parse.swift */; };
 		20409F362251E2810055C5DE /* iOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20409F332251E2800055C5DE /* iOS.storyboard */; };
 		20409F382251E2810055C5DE /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20409F352251E2800055C5DE /* App.swift */; };
 		20409F3E2251E2890055C5DE /* Mac.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20409F3B2251E2890055C5DE /* Mac.storyboard */; };
@@ -79,6 +81,7 @@
 /* Begin PBXFileReference section */
 		201739B022535E8E00E7EB9D /* TestHasher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHasher.swift; sourceTree = "<group>"; };
 		201739B2225361CB00E7EB9D /* Hasher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hasher.swift; sourceTree = "<group>"; };
+		201B21E722561938005F3ED9 /* Parse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parse.swift; sourceTree = "<group>"; };
 		20409F302251E2750055C5DE /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20409F332251E2800055C5DE /* iOS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iOS.storyboard; sourceTree = "<group>"; };
 		20409F342251E2800055C5DE /* iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iOS.plist; sourceTree = "<group>"; };
@@ -225,6 +228,7 @@
 				20E716C62251F0030081E7FC /* Git.swift */,
 				201739B2225361CB00E7EB9D /* Hasher.swift */,
 				20F0FCB8225395CB004293DB /* Index.swift */,
+				201B21E722561938005F3ED9 /* Parse.swift */,
 				20E716C52251F0030081E7FC /* Repository.swift */,
 			);
 			path = Pigit;
@@ -454,6 +458,7 @@
 				20E716D92252564E0081E7FC /* Failure.swift in Sources */,
 				20E716C72251F0030081E7FC /* Repository.swift in Sources */,
 				20F0FCB9225395CB004293DB /* Index.swift in Sources */,
+				201B21E822561938005F3ED9 /* Parse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +472,7 @@
 				20E716DA2252564E0081E7FC /* Failure.swift in Sources */,
 				20E716C82251F0030081E7FC /* Repository.swift in Sources */,
 				20F0FCBA225395CB004293DB /* Index.swift in Sources */,
+				201B21E922561938005F3ED9 /* Parse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
