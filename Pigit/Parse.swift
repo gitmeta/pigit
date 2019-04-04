@@ -7,8 +7,9 @@ class Parse {
     init?(_ url: URL) {
         if let data = try? Data(contentsOf: url) {
             self.data = data
+        } else {
+            return nil
         }
-        return nil
     }
     
     func variable() throws -> String {
