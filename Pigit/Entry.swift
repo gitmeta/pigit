@@ -22,7 +22,7 @@ class Entry {
         let userId = try parse.number(4)
         let groupId = try parse.number(4)
         let fileContentLength = try parse.number(4)
-        let hash = try parse.string(20)
+        let hash = try parse.hash(20)
         let flags = try parse.bit()
         
         if try parse.bit() {
@@ -31,6 +31,9 @@ class Entry {
         }
         
         let name = try parse.variable()
+        print(fileContentLength)
+        print(hash)
+        print(name)
         return entry
     }
 }

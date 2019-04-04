@@ -17,13 +17,16 @@ class Parse {
         var byte = String()
         repeat {
             result += byte
-            index += 1
             byte = try string(1)
         } while(byte != "\u{0000}")
         return result
     }
     
     func string(_ bytes: Int) throws -> String { return String(decoding: try advance(bytes), as: UTF8.self) }
+    
+    func hash(_ bytes: Int) throws -> String {
+        return (try advance(bytes)).map { String(format: "%02hhx", $0) }.joined()
+    }
     
     func number(_ bytes: Int) throws -> Int {
         if let result = Int(try advance(bytes).map { String(format: "%02hhx", $0) }.joined(), radix: 16) {
