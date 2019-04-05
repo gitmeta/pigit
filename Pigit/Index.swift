@@ -25,7 +25,27 @@ struct Index {
         }
         
         print("remains: \(parse.index) ..< \(parse.data.count)")
-        print(try parse.string(4))
+        if try parse.string(4) == "TREE" {
+            debugPrint(try parse.number(4))
+            debugPrint("name \(try parse.variable())")
+            parse.clean()
+            debugPrint("entries: \(try parse.ascii(" "))")
+            //debugPrint("space: \(try parse.string(1))")
+            debugPrint("subtrees: \(try parse.ascii("\n"))")
+            //debugPrint("linefeed: \(try parse.string(1))")
+            debugPrint("hash: \(try parse.hash(20))")
+            print("remains: \(parse.index) ..< \(parse.data.count)")
+            
+            debugPrint("name \(try parse.variable())")
+            parse.clean()
+            debugPrint("entries: \(try parse.ascii(" "))")
+            //debugPrint("space: \(try parse.string(1))")
+            debugPrint("subtrees: \(try parse.ascii("\n"))")
+            //debugPrint("linefeed: \(try parse.string(1))")
+            debugPrint("hash: \(try parse.hash(20))")
+            print("remains: \(parse.index) ..< \(parse.data.count)")
+        }
+        debugPrint("hash: \(try parse.hash(20))")
         return entries
     }
 }

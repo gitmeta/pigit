@@ -12,6 +12,16 @@ class Parse {
         }
     }
     
+    func variable() throws -> String {
+        var result = String()
+        var byte = String()
+        repeat {
+            result += byte
+            byte = try string(1)
+        } while(byte != "\u{0000}")
+        return result
+    }
+    
     func type() throws -> Int {
         guard data.count > index + 28,
             let result = Int(data.subdata(in: index + 24 ..< index + 28).map { String(format: "%02hhx", $0) }.joined(), radix: 16)
@@ -62,6 +72,16 @@ class Parse {
     func length() throws -> Int {
         guard let result = Int(data.subdata(in: index + 1 ..< index + 2).map { String(format: "%02hhx", $0) }.joined(), radix: 16)
         else { throw Failure.Index.malformed }
+        return result
+    }
+    
+    func ascii(_ limiter: String) throws -> String {
+        var result = String()
+        var character = String()
+        while character != limiter {
+            result += character
+            character = try string(1)
+        }
         return result
     }
     
