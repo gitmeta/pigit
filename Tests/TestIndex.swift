@@ -31,7 +31,8 @@ class TestIndex: XCTestCase {
         XCTAssertNotNil(index)
         XCTAssertEqual(2, index?.version)
         XCTAssertEqual(1, index?.entries.count)
-        XCTAssertNotNil(index?.entries.first as? Blob)
+        XCTAssertNotNil(index?.entries.first)
+        XCTAssertEqual("483a3bef65960a1651d83168f2d1501397617472", index?.id)
         XCTAssertTrue(index?.entries.first?.conflicts == false)
         XCTAssertEqual("afile.json", index?.entries.first?.name)
         XCTAssertEqual("3b18e512dba79e4c8300dd08aeb37f8e728b8dad", index?.entries.first?.container)
@@ -51,6 +52,7 @@ class TestIndex: XCTestCase {
         XCTAssertNotNil(index)
         XCTAssertEqual(2, index?.version)
         XCTAssertEqual(22, index?.entries.count)
+        XCTAssertEqual("be8343716dab3cb0a2f40813b3f0077bb0cb1a80", index?.id)
     }
     
     func testIndex2() {
@@ -60,5 +62,6 @@ class TestIndex: XCTestCase {
         XCTAssertNotNil(index)
         XCTAssertEqual(2, index?.version)
         XCTAssertEqual(22, index?.entries.count)
+        XCTAssertEqual("545245450000004100323220310a9d59da034b57", index?.id)
     }
 }
