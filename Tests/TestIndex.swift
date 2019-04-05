@@ -32,8 +32,9 @@ class TestIndex: XCTestCase {
         XCTAssertEqual(2, index?.version)
         XCTAssertEqual(1, index?.entries.count)
         XCTAssertNotNil(index?.entries.first as? Blob)
+        XCTAssertTrue(index?.entries.first?.conflicts == false)
         XCTAssertEqual("afile.json", index?.entries.first?.name)
-        XCTAssertEqual("3b18e512dba79e4c8300dd08aeb37f8e728b8dad", index?.entries.first?.id)
+        XCTAssertEqual("3b18e512dba79e4c8300dd08aeb37f8e728b8dad", index?.entries.first?.container)
         XCTAssertEqual(12, index?.entries.first?.size)
         XCTAssertEqual(Date(timeIntervalSince1970: 1554190306), index?.entries.first?.created)
         XCTAssertEqual(Date(timeIntervalSince1970: 1554190306), index?.entries.first?.modified)
@@ -45,6 +46,15 @@ class TestIndex: XCTestCase {
     
     func testIndex1() {
         try! (try! Data(contentsOf: Bundle(for: TestIndex.self).url(forResource: "index1", withExtension: nil)!)).write(to:
+            url.appendingPathComponent(".git/index"))
+        let index = Index.load(url)
+        XCTAssertNotNil(index)
+        XCTAssertEqual(2, index?.version)
+        XCTAssertEqual(22, index?.entries.count)
+    }
+    
+    func testIndex2() {
+        try! (try! Data(contentsOf: Bundle(for: TestIndex.self).url(forResource: "index2", withExtension: nil)!)).write(to:
             url.appendingPathComponent(".git/index"))
         let index = Index.load(url)
         XCTAssertNotNil(index)

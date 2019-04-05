@@ -23,6 +23,9 @@ struct Index {
             entries.append(try Entry.make(parse))
             parse.clean()
         }
+        
+        print("remains: \(parse.index) ..< \(parse.data.count)")
+        print(try parse.string(4))
         return entries
     }
 }

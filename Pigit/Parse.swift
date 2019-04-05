@@ -2,7 +2,7 @@ import Foundation
 
 class Parse {
     var index = 0
-    private let data: Data
+    let data: Data
     
     init?(_ url: URL) {
         if let data = try? Data(contentsOf: url) {
@@ -36,6 +36,20 @@ class Parse {
         let result = Date(timeIntervalSince1970: TimeInterval(try number(4)))
         index += 4
         return result
+    }
+    
+    func conflict() throws -> Bool {
+        var byte = data.subdata(in:
+            index ..< index + 1).withUnsafeBytes { $0.baseAddress!.bindMemory(to: UInt8.self, capacity: 1).pointee }
+        byte >>= 2
+        if byte & 0x01 == 1 {
+            return true
+        }
+        byte >>= 1
+        if byte & 0x01 == 1 {
+            return true
+        }
+        return false
     }
     
     func version3() throws -> Bool {
