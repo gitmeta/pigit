@@ -1,7 +1,7 @@
 import Foundation
 
 class Parse {
-    private var index = 0
+    var index = 0
     private let data: Data
     
     init?(_ url: URL) {
@@ -19,6 +19,13 @@ class Parse {
             result += byte
             byte = try string(1)
         } while(byte != "\u{0000}")
+        return result
+    }
+    
+    func type() throws -> Int {
+        guard data.count > index + 28,
+        let result = Int(data.subdata(in: index + 24 ..< index + 28).map { String(format: "%02hhx", $0) }.joined(), radix: 16)
+        else { throw Failure.Index.malformed }
         return result
     }
     
@@ -41,8 +48,13 @@ class Parse {
         return result
     }
     
-    func bit() throws -> Bool {
-        return try advance(1).withUnsafeBytes { $0.baseAddress!.bindMemory(to: Bool.self, capacity: 1).pointee }
+    func bits() throws -> [Int] {
+        var byte = try advance(2).withUnsafeBytes { $0.baseAddress!.bindMemory(to: UInt16.self, capacity: 1).pointee }
+        return (0 ..< 16).map { _ in
+            let bit = byte & 0x01
+            byte >>= 1
+            return bit == 0 ? 0 : 1
+        }
     }
     
     private func advance(_ bytes: Int) throws -> Data {

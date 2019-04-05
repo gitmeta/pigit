@@ -1,47 +1,50 @@
 import Foundation
 
 class Entry {
-    private var created = Date()
-    private var modified = Date()
-    private var id = String()
-    private var name = String()
+    private(set) var created = Date()
+    private(set) var modified = Date()
+    private(set) var id = String()
+    private(set) var name = String()
+    private(set) var size = 0
+    private(set) var device = 0
+    private(set) var inode = 0
+    private(set) var user = 0
+    private(set) var group = 0
 
     class func make(_ parse: Parse) throws -> Entry {
         let entry: Entry
-        let created = try parse.date()
-        let modeified = try parse.date()
-        let device = try parse.number(4)
-        let inode = try parse.number(4)
         
-        switch try parse.number(4) {
-        case Tree.id: entry = Tree()
-        case Blob.id: entry = Blob()
+        switch try parse.type() {
+        case Tree.type: entry = Tree()
+        case Blob.type: entry = Blob()
         default: throw Failure.Index.malformed
         }
         
-        let userId = try parse.number(4)
-        let groupId = try parse.number(4)
-        let fileContentLength = try parse.number(4)
-        let hash = try parse.hash(20)
-        let flags = try parse.bit()
+        entry.created = try parse.date()
+        entry.modified = try parse.date()
+        entry.device = try parse.number(4)
+        entry.inode = try parse.number(4)
         
-        if try parse.bit() {
-            let waste = try parse.bit()
-            let waste2 = try parse.bit()
+        parse.index += 4
+        
+        entry.user = try parse.number(4)
+        entry.group = try parse.number(4)
+        entry.size = try parse.number(4)
+        entry.id = try parse.hash(20)
+
+        if try parse.bits()[1] == 1 {
+            parse.index += 16
         }
         
-        let name = try parse.variable()
-        print(fileContentLength)
-        print(hash)
-        print(name)
+        entry.name = try parse.variable()
         return entry
     }
 }
 
-private class Tree: Entry {
-    fileprivate static let id = 0
+class Tree: Entry {
+    fileprivate static let type = 0
 }
 
-private class Blob: Entry {
-    fileprivate static let id = 33188
+class Blob: Entry {
+    fileprivate static let type = 33188
 }
