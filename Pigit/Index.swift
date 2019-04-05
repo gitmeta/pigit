@@ -21,6 +21,7 @@ struct Index {
         var entries = [Entry]()
         for _ in 0 ..< (try parse.number(4)) {
             entries.append(try Entry.make(parse))
+            parse.clean()
         }
         return entries
     }

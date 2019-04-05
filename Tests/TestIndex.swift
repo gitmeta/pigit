@@ -24,7 +24,7 @@ class TestIndex: XCTestCase {
         XCTAssertNil(Index.load(url))
     }
     
-    func testIndex() {
+    func testIndex0() {
         try! (try! Data(contentsOf: Bundle(for: TestIndex.self).url(forResource: "index0", withExtension: nil)!)).write(to:
             url.appendingPathComponent(".git/index"))
         let index = Index.load(url)
@@ -41,5 +41,14 @@ class TestIndex: XCTestCase {
         XCTAssertEqual(10051196, index?.entries.first?.inode)
         XCTAssertEqual(502, index?.entries.first?.user)
         XCTAssertEqual(20, index?.entries.first?.group)
+    }
+    
+    func testIndex1() {
+        try! (try! Data(contentsOf: Bundle(for: TestIndex.self).url(forResource: "index1", withExtension: nil)!)).write(to:
+            url.appendingPathComponent(".git/index"))
+        let index = Index.load(url)
+        XCTAssertNotNil(index)
+        XCTAssertEqual(2, index?.version)
+        XCTAssertEqual(22, index?.entries.count)
     }
 }

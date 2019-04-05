@@ -12,19 +12,9 @@ class Parse {
         }
     }
     
-    func variable() throws -> String {
-        var result = String()
-        var byte = String()
-        repeat {
-            result += byte
-            byte = try string(1)
-        } while(byte != "\u{0000}")
-        return result
-    }
-    
     func type() throws -> Int {
         guard data.count > index + 28,
-        let result = Int(data.subdata(in: index + 24 ..< index + 28).map { String(format: "%02hhx", $0) }.joined(), radix: 16)
+            let result = Int(data.subdata(in: index + 24 ..< index + 28).map { String(format: "%02hhx", $0) }.joined(), radix: 16)
         else { throw Failure.Index.malformed }
         return result
     }
@@ -48,12 +38,22 @@ class Parse {
         return result
     }
     
-    func bits() throws -> [Int] {
-        var byte = try advance(2).withUnsafeBytes { $0.baseAddress!.bindMemory(to: UInt16.self, capacity: 1).pointee }
-        return (0 ..< 16).map { _ in
-            let bit = byte & 0x01
-            byte >>= 1
-            return bit == 0 ? 0 : 1
+    func version3() throws -> Bool {
+        var byte = data.subdata(in:
+            index ..< index + 1).withUnsafeBytes { $0.baseAddress!.bindMemory(to: UInt8.self, capacity: 1).pointee }
+        byte >>= 1
+        return byte & 0x01 == 1
+    }
+    
+    func length() throws -> Int {
+        guard let result = Int(data.subdata(in: index + 1 ..< index + 2).map { String(format: "%02hhx", $0) }.joined(), radix: 16)
+        else { throw Failure.Index.malformed }
+        return result
+    }
+    
+    func clean() {
+        while (String(decoding: data.subdata(in: index ..< index + 1), as: UTF8.self) == "\u{0000}") {
+            index += 1
         }
     }
     

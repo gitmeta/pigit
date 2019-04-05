@@ -17,6 +17,7 @@
 		20409F3E2251E2890055C5DE /* Mac.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20409F3B2251E2890055C5DE /* Mac.storyboard */; };
 		20409F402251E2890055C5DE /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20409F3D2251E2890055C5DE /* App.swift */; };
 		20409F442251E2920055C5DE /* TestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20409F422251E2910055C5DE /* TestRepository.swift */; };
+		2077A98E22573D8800C7CC43 /* index1 in Resources */ = {isa = PBXBuildFile; fileRef = 2077A98D22573D8800C7CC43 /* index1 */; };
 		20802C412251E9A6007D6C3A /* libPigit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20802C3D2251E362007D6C3A /* libPigit.a */; };
 		20802C422251E9B5007D6C3A /* libPigit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20802C3E2251E362007D6C3A /* libPigit.a */; };
 		20802C472251E9C9007D6C3A /* libPigit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20802C3D2251E362007D6C3A /* libPigit.a */; };
@@ -94,6 +95,7 @@
 		20409F462251E2A40055C5DE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		20409F472251E2A40055C5DE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		20409F482251E2A40055C5DE /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		2077A98D22573D8800C7CC43 /* index1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = index1; sourceTree = "<group>"; };
 		20802C3B2251E362007D6C3A /* PigitMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PigitMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20802C3C2251E362007D6C3A /* PigitiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PigitiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20802C3D2251E362007D6C3A /* libPigit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPigit.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				20F0FCB422539444004293DB /* index0 */,
+				2077A98D22573D8800C7CC43 /* index1 */,
 				20409F432251E2910055C5DE /* Tests.plist */,
 				20E716BF2251EF460081E7FC /* TestGit.swift */,
 				201739B022535E8E00E7EB9D /* TestHasher.swift */,
@@ -423,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F0FCB522539444004293DB /* index0 in Resources */,
+				2077A98E22573D8800C7CC43 /* index1 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

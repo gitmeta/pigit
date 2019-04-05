@@ -16,8 +16,7 @@ class Entry {
         
         switch try parse.type() {
         case Tree.type: entry = Tree()
-        case Blob.type: entry = Blob()
-        default: throw Failure.Index.malformed
+        default: entry = Blob()
         }
         
         entry.created = try parse.date()
@@ -32,17 +31,17 @@ class Entry {
         entry.size = try parse.number(4)
         entry.id = try parse.hash(20)
 
-        if try parse.bits()[1] == 1 {
-            parse.index += 16
-        }
+        try entry.name = {
+            parse.index += $0 ? 4 : 2
+            return try parse.string($1)
+        } (try parse.version3(), try parse.length())
         
-        entry.name = try parse.variable()
         return entry
     }
 }
 
 class Tree: Entry {
-    fileprivate static let type = 0
+    fileprivate static let type = 16384
 }
 
 class Blob: Entry {
