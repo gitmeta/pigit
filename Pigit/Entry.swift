@@ -15,7 +15,7 @@ struct Entry {
     struct Tree {
         var id = String()
         var name = String()
-        var entries = String()
-        var subtrees = String()
+        var entries = 0
+        var subtrees = 0
     }
 }

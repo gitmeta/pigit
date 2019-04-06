@@ -14,8 +14,9 @@ struct Index {
             let version = try? parse.number(),
             let count = try? parse.number(),
             let entries = try? (0 ..< count).map({ _ in try entry(parse) }),
-            let tree = try? tree(parse),
-            let id = try? parse.hash()
+            let tree = try? trees(parse),
+            let id = try? parse.hash(),
+            parse.index == parse.data.count
         else { return nil }
         index.version = version
         index.entries = entries
@@ -37,32 +38,28 @@ struct Index {
         entry.container = try parse.hash()
         entry.conflicts = try parse.conflict()
         entry.name = try parse.name()
-        parse.clean()
         return entry
     }
     
-    private static func tree(_ parse: Parse) throws -> [Entry.Tree] {
-        let limit = parse.index + (try parse.tree())
+    private static func trees(_ parse: Parse) throws -> [Entry.Tree] {
+        let limit = (try parse.tree())
         var result = [Entry.Tree]()
-        while parse.index < limit {
-            debugPrint("name \(try parse.variable())")
-            parse.clean()
-            debugPrint("entries: \(try parse.ascii(" "))")
-            //debugPrint("space: \(try parse.string(1))")
-            debugPrint("subtrees: \(try parse.ascii("\n"))")
-            //debugPrint("linefeed: \(try parse.string(1))")
-            debugPrint("hash: \(try parse.hash())")
-            print("remains: \(parse.index) ..< \(parse.data.count)")
-            
-            debugPrint("name \(try parse.variable())")
-            parse.clean()
-            debugPrint("entries: \(try parse.ascii(" "))")
-            //debugPrint("space: \(try parse.string(1))")
-            debugPrint("subtrees: \(try parse.ascii("\n"))")
-            //debugPrint("linefeed: \(try parse.string(1))")
-            debugPrint("hash: \(try parse.hash())")
-            print("remains: \(parse.index) ..< \(parse.data.count)")
-        }
+        while parse.index < limit { result.append(try tree(parse)) }
         return result
+    }
+    
+    private static func tree(_ parse: Parse) throws -> Entry.Tree {
+        var tree = Entry.Tree()
+        tree.name = try parse.variable()
+        tree.entries = try {
+            if $0 == nil { throw Failure.Index.malformed }
+            return $0!
+        } (Int(try parse.ascii(" ")))
+        tree.subtrees = try {
+            if $0 == nil { throw Failure.Index.malformed }
+            return $0!
+        } (Int(try parse.ascii("\n")))
+        tree.id = try parse.hash()
+        return tree
     }
 }

@@ -1,8 +1,8 @@
 import Foundation
 
 class Parse {
-    var index = 0
     let data: Data
+    private(set) var index = 0
     
     init?(_ url: URL) {
         if let data = try? Data(contentsOf: url) {
@@ -29,13 +29,16 @@ class Parse {
             result += byte
             byte = try character()
         } while(byte != "\u{0000}")
+        clean()
         return result
     }
     
     func name() throws -> String {
         return try {
             index += $0 ? 4 : 2
-            return String(decoding: try advance($1), as: UTF8.self)
+            let result = String(decoding: try advance($1), as: UTF8.self)
+            clean()
+            return result
         } (try version3(), try length())
     }
     
@@ -51,7 +54,10 @@ class Parse {
     }
     
     func tree() throws -> Int {
-        return String(decoding: data.subdata(in: index ..< index + 4), as: UTF8.self) == "Tree" ? try number() : 0
+        return String(decoding: data.subdata(in: index ..< index + 4), as: UTF8.self) == "TREE" ? try {
+                index += 4
+                return try number() + index
+        } () : 0
     }
     
     func date() throws -> Date {
@@ -74,10 +80,8 @@ class Parse {
         return false
     }
     
-    func clean() {
-        while (String(decoding: data.subdata(in: index ..< index + 1), as: UTF8.self) == "\u{0000}") {
-            index += 1
-        }
+    private func clean() {
+        while (String(decoding: data.subdata(in: index ..< index + 1), as: UTF8.self) == "\u{0000}") { index += 1 }
     }
     
     private func version3() throws -> Bool {

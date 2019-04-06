@@ -62,6 +62,15 @@ class TestIndex: XCTestCase {
         XCTAssertNotNil(index)
         XCTAssertEqual(2, index?.version)
         XCTAssertEqual(22, index?.entries.count)
-        XCTAssertEqual("545245450000004100323220310a9d59da034b57", index?.id)
+        XCTAssertEqual("5b7d07ddf4a539c8344a734364ddc4b17099c5d7", index?.id)
+        XCTAssertEqual(2, index?.tree.count)
+        XCTAssertEqual("9d59da034b57e98e13dacdb496202495332933e4", index?.tree.first?.id)
+        XCTAssertEqual("", index?.tree.first?.name)
+        XCTAssertEqual(22, index?.tree.first?.entries)
+        XCTAssertEqual(1, index?.tree.first?.subtrees)
+        XCTAssertEqual("7a54af5932f25ec362249f33aa6b730bacdf58cb", index?.tree.last?.id)
+        XCTAssertEqual("some directory", index?.tree.last?.name)
+        XCTAssertEqual(2, index?.tree.last?.entries)
+        XCTAssertEqual(0, index?.tree.last?.subtrees)
     }
 }
