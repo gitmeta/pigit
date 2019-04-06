@@ -39,7 +39,7 @@ class Parse {
             let result = String(decoding: try advance($1), as: UTF8.self)
             clean()
             return result
-        } (try version3(), try length())
+        } (try not2(), try length())
     }
     
     func string() throws -> String { return String(decoding: try advance(4), as: UTF8.self) }
@@ -84,7 +84,7 @@ class Parse {
         while (String(decoding: data.subdata(in: index ..< index + 1), as: UTF8.self) == "\u{0000}") { index += 1 }
     }
     
-    private func version3() throws -> Bool {
+    private func not2() throws -> Bool {
         var byte = data.subdata(in:
             index ..< index + 1).withUnsafeBytes { $0.baseAddress!.bindMemory(to: UInt8.self, capacity: 1).pointee }
         byte >>= 1
