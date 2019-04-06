@@ -23,6 +23,11 @@
 		20802C422251E9B5007D6C3A /* libPigit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20802C3E2251E362007D6C3A /* libPigit.a */; };
 		20802C472251E9C9007D6C3A /* libPigit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20802C3D2251E362007D6C3A /* libPigit.a */; };
 		20980A7D2258D045004540B1 /* index3 in Resources */ = {isa = PBXBuildFile; fileRef = 20980A7C2258D045004540B1 /* index3 */; };
+		20980A7F2258DADE004540B1 /* Press.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20980A7E2258DADE004540B1 /* Press.swift */; };
+		20980A802258DADE004540B1 /* Press.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20980A7E2258DADE004540B1 /* Press.swift */; };
+		20980A822258DCF5004540B1 /* TestPress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20980A812258DCF5004540B1 /* TestPress.swift */; };
+		20980A842258DDD0004540B1 /* tree0 in Resources */ = {isa = PBXBuildFile; fileRef = 20980A832258DDD0004540B1 /* tree0 */; };
+		20980A862258E795004540B1 /* blob0 in Resources */ = {isa = PBXBuildFile; fileRef = 20980A852258E795004540B1 /* blob0 */; };
 		20E716C02251EF460081E7FC /* TestGit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716BF2251EF460081E7FC /* TestGit.swift */; };
 		20E716C72251F0030081E7FC /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716C52251F0030081E7FC /* Repository.swift */; };
 		20E716C82251F0030081E7FC /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716C52251F0030081E7FC /* Repository.swift */; };
@@ -102,6 +107,10 @@
 		20802C3D2251E362007D6C3A /* libPigit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPigit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		20802C3E2251E362007D6C3A /* libPigit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPigit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		20980A7C2258D045004540B1 /* index3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = index3; sourceTree = "<group>"; };
+		20980A7E2258DADE004540B1 /* Press.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Press.swift; sourceTree = "<group>"; };
+		20980A812258DCF5004540B1 /* TestPress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPress.swift; sourceTree = "<group>"; };
+		20980A832258DDD0004540B1 /* tree0 */ = {isa = PBXFileReference; lastKnownFileType = file; path = tree0; sourceTree = "<group>"; };
+		20980A852258E795004540B1 /* blob0 */ = {isa = PBXFileReference; lastKnownFileType = file; path = blob0; sourceTree = "<group>"; };
 		20DB2A52225344E100AE5D99 /* Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mac.entitlements; sourceTree = "<group>"; };
 		20E716BF2251EF460081E7FC /* TestGit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGit.swift; sourceTree = "<group>"; };
 		20E716C52251F0030081E7FC /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -206,14 +215,17 @@
 		20409F412251E2910055C5DE /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				20980A852258E795004540B1 /* blob0 */,
 				20F0FCB422539444004293DB /* index0 */,
 				2077A98D22573D8800C7CC43 /* index1 */,
 				2077A98F2257568C00C7CC43 /* index2 */,
 				20980A7C2258D045004540B1 /* index3 */,
+				20980A832258DDD0004540B1 /* tree0 */,
 				20409F432251E2910055C5DE /* Tests.plist */,
 				20E716BF2251EF460081E7FC /* TestGit.swift */,
 				201739B022535E8E00E7EB9D /* TestHasher.swift */,
 				20F0FCB622539466004293DB /* TestIndex.swift */,
+				20980A812258DCF5004540B1 /* TestPress.swift */,
 				20409F422251E2910055C5DE /* TestRepository.swift */,
 			);
 			path = Tests;
@@ -234,6 +246,7 @@
 				201739B2225361CB00E7EB9D /* Hasher.swift */,
 				20F0FCB8225395CB004293DB /* Index.swift */,
 				201B21E722561938005F3ED9 /* Parse.swift */,
+				20980A7E2258DADE004540B1 /* Press.swift */,
 				20E716C52251F0030081E7FC /* Repository.swift */,
 			);
 			path = Pigit;
@@ -427,7 +440,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20980A862258E795004540B1 /* blob0 in Resources */,
 				20F0FCB522539444004293DB /* index0 in Resources */,
+				20980A842258DDD0004540B1 /* tree0 in Resources */,
 				20980A7D2258D045004540B1 /* index3 in Resources */,
 				2077A9902257568C00C7CC43 /* index2 in Resources */,
 				2077A98E22573D8800C7CC43 /* index1 in Resources */,
@@ -462,6 +477,7 @@
 			files = (
 				20E716C92251F0030081E7FC /* Git.swift in Sources */,
 				201739B3225361CB00E7EB9D /* Hasher.swift in Sources */,
+				20980A7F2258DADE004540B1 /* Press.swift in Sources */,
 				20E716D92252564E0081E7FC /* Failure.swift in Sources */,
 				20E716C72251F0030081E7FC /* Repository.swift in Sources */,
 				20F0FCB9225395CB004293DB /* Index.swift in Sources */,
@@ -475,6 +491,7 @@
 			files = (
 				20E716CA2251F0030081E7FC /* Git.swift in Sources */,
 				201739B4225361CB00E7EB9D /* Hasher.swift in Sources */,
+				20980A802258DADE004540B1 /* Press.swift in Sources */,
 				20E716DA2252564E0081E7FC /* Failure.swift in Sources */,
 				20E716C82251F0030081E7FC /* Repository.swift in Sources */,
 				20F0FCBA225395CB004293DB /* Index.swift in Sources */,
@@ -487,6 +504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				201739B122535E8E00E7EB9D /* TestHasher.swift in Sources */,
+				20980A822258DCF5004540B1 /* TestPress.swift in Sources */,
 				20E716C02251EF460081E7FC /* TestGit.swift in Sources */,
 				20F0FCB722539466004293DB /* TestIndex.swift in Sources */,
 				20409F442251E2920055C5DE /* TestRepository.swift in Sources */,

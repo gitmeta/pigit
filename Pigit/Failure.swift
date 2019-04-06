@@ -10,6 +10,10 @@ public struct Failure: LocalizedError {
         public static let malformed = Failure("Unable to read index.")
     }
     
+    public struct Press {
+        public static let unreadable = Failure("Unable to read compressed file.")
+    }
+    
     public var errorDescription: String? { return "Error: " + string }
     private let string: String
     private init(_ string: String) { self.string = string }
