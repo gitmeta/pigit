@@ -73,4 +73,15 @@ class TestIndex: XCTestCase {
         XCTAssertEqual(2, index?.trees.last?.entries)
         XCTAssertEqual(0, index?.trees.last?.subtrees)
     }
+    
+    func testIndex3() {
+        try! (try! Data(contentsOf: Bundle(for: TestIndex.self).url(forResource: "index3", withExtension: nil)!)).write(to:
+            url.appendingPathComponent(".git/index"))
+        let index = Index.load(url)
+        XCTAssertNotNil(index)
+        XCTAssertEqual(2, index?.version)
+        XCTAssertEqual(22, index?.entries.count)
+        XCTAssertEqual("22540a368e9c10d2ead5c097626cc2b2ea0cc0ac", index?.id)
+        XCTAssertEqual(2, index?.trees.count)
+    }
 }
