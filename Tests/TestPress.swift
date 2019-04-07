@@ -11,10 +11,12 @@ class TestPress: XCTestCase {
     func testBlob0() {
         XCTAssertEqual("""
 blob 12\u{0000}hello rorld\n
-""", press.decompress(try! Data(contentsOf: Bundle(for: TestPress.self).url(forResource: "blob0", withExtension: nil)!)))}
+""", String(decoding: press.decompress(try!
+    Data(contentsOf: Bundle(for: TestPress.self).url(forResource: "blob0", withExtension: nil)!)), as: UTF8.self))
+    }
     
     func testTree0() {
-        XCTAssertEqual("""
-blob 12\u{0000}hello rorld\n
-""", press.decompress(try! Data(contentsOf: Bundle(for: TestPress.self).url(forResource: "tree0", withExtension: nil)!)))}
+        XCTAssertEqual(839, press.decompress(try!
+            Data(contentsOf: Bundle(for: TestPress.self).url(forResource: "tree0", withExtension: nil)!)).count)
+    }
 }
