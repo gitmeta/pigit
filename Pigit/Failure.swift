@@ -14,6 +14,10 @@ public struct Failure: LocalizedError {
         public static let unreadable = Failure("Unable to read compressed file.")
     }
     
+    public struct Tree {
+        public static let unreadable = Failure("Unable to read tree.")
+    }
+    
     public var errorDescription: String? { return "Error: " + string }
     private let string: String
     private init(_ string: String) { self.string = string }

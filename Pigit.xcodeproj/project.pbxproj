@@ -18,6 +18,10 @@
 		20409F402251E2890055C5DE /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20409F3D2251E2890055C5DE /* App.swift */; };
 		20409F442251E2920055C5DE /* TestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20409F422251E2910055C5DE /* TestRepository.swift */; };
 		205826AC225A1D87002D34F8 /* commit0 in Resources */ = {isa = PBXBuildFile; fileRef = 205826AB225A1D87002D34F8 /* commit0 */; };
+		205826AE225A2072002D34F8 /* tree1 in Resources */ = {isa = PBXBuildFile; fileRef = 205826AD225A2072002D34F8 /* tree1 */; };
+		20681243225A247700A6D345 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20681242225A247700A6D345 /* Tree.swift */; };
+		20681244225A247700A6D345 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20681242225A247700A6D345 /* Tree.swift */; };
+		20681246225A2ACD00A6D345 /* tree2 in Resources */ = {isa = PBXBuildFile; fileRef = 20681245225A2ACC00A6D345 /* tree2 */; };
 		2077A98E22573D8800C7CC43 /* index1 in Resources */ = {isa = PBXBuildFile; fileRef = 2077A98D22573D8800C7CC43 /* index1 */; };
 		2077A9902257568C00C7CC43 /* index2 in Resources */ = {isa = PBXBuildFile; fileRef = 2077A98F2257568C00C7CC43 /* index2 */; };
 		20802C412251E9A6007D6C3A /* libPigit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20802C3D2251E362007D6C3A /* libPigit.a */; };
@@ -102,6 +106,9 @@
 		20409F472251E2A40055C5DE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		20409F482251E2A40055C5DE /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		205826AB225A1D87002D34F8 /* commit0 */ = {isa = PBXFileReference; lastKnownFileType = file; path = commit0; sourceTree = "<group>"; };
+		205826AD225A2072002D34F8 /* tree1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = tree1; sourceTree = "<group>"; };
+		20681242225A247700A6D345 /* Tree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		20681245225A2ACC00A6D345 /* tree2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = tree2; sourceTree = "<group>"; };
 		2077A98D22573D8800C7CC43 /* index1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = index1; sourceTree = "<group>"; };
 		2077A98F2257568C00C7CC43 /* index2 */ = {isa = PBXFileReference; lastKnownFileType = file; path = index2; sourceTree = "<group>"; };
 		20802C3B2251E362007D6C3A /* PigitMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PigitMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,6 +231,8 @@
 				2077A98F2257568C00C7CC43 /* index2 */,
 				20980A7C2258D045004540B1 /* index3 */,
 				20980A832258DDD0004540B1 /* tree0 */,
+				205826AD225A2072002D34F8 /* tree1 */,
+				20681245225A2ACC00A6D345 /* tree2 */,
 				20409F432251E2910055C5DE /* Tests.plist */,
 				20E716BF2251EF460081E7FC /* TestGit.swift */,
 				201739B022535E8E00E7EB9D /* TestHasher.swift */,
@@ -251,6 +260,7 @@
 				201B21E722561938005F3ED9 /* Parse.swift */,
 				20980A7E2258DADE004540B1 /* Press.swift */,
 				20E716C52251F0030081E7FC /* Repository.swift */,
+				20681242225A247700A6D345 /* Tree.swift */,
 			);
 			path = Pigit;
 			sourceTree = "<group>";
@@ -449,6 +459,8 @@
 				20980A842258DDD0004540B1 /* tree0 in Resources */,
 				20980A7D2258D045004540B1 /* index3 in Resources */,
 				2077A9902257568C00C7CC43 /* index2 in Resources */,
+				20681246225A2ACD00A6D345 /* tree2 in Resources */,
+				205826AE225A2072002D34F8 /* tree1 in Resources */,
 				2077A98E22573D8800C7CC43 /* index1 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +496,7 @@
 				20980A7F2258DADE004540B1 /* Press.swift in Sources */,
 				20E716D92252564E0081E7FC /* Failure.swift in Sources */,
 				20E716C72251F0030081E7FC /* Repository.swift in Sources */,
+				20681243225A247700A6D345 /* Tree.swift in Sources */,
 				20F0FCB9225395CB004293DB /* Index.swift in Sources */,
 				201B21E822561938005F3ED9 /* Parse.swift in Sources */,
 			);
@@ -498,6 +511,7 @@
 				20980A802258DADE004540B1 /* Press.swift in Sources */,
 				20E716DA2252564E0081E7FC /* Failure.swift in Sources */,
 				20E716C82251F0030081E7FC /* Repository.swift in Sources */,
+				20681244225A247700A6D345 /* Tree.swift in Sources */,
 				20F0FCBA225395CB004293DB /* Index.swift in Sources */,
 				201B21E922561938005F3ED9 /* Parse.swift in Sources */,
 			);

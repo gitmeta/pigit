@@ -12,6 +12,10 @@ class Parse {
         }
     }
     
+    init(_ data: Data) {
+        self.data = data
+    }
+    
     func ascii(_ limiter: String) throws -> String {
         var result = String()
         var character = String()

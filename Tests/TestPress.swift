@@ -21,6 +21,27 @@ blob 12\u{0000}hello rorld
             Data(contentsOf: Bundle(for: TestPress.self).url(forResource: "tree0", withExtension: nil)!)).count)
     }
     
+    func testTree1() {
+        let tree = try? Tree(press.decompress(try! Data(contentsOf: Bundle(for: TestPress.self).url(forResource: "tree1",
+                                                                                                    withExtension: nil)!)))
+        XCTAssertEqual(1, tree?.items.count)
+        XCTAssertNotNil(tree?.items.first as? Tree.Blob)
+        XCTAssertEqual("hello.json", tree?.items.first?.name)
+        XCTAssertEqual("e0f1ee1826f922f041e557a16173f2a93835825e", tree?.items.first?.id)
+    }
+    
+    func testTree2() {
+        let tree = try? Tree(press.decompress(try! Data(contentsOf: Bundle(for: TestPress.self).url(forResource: "tree2",
+                                                                                                    withExtension: nil)!)))
+        XCTAssertEqual(2, tree?.items.count)
+        XCTAssertNotNil(tree?.items.first as? Tree.Blob)
+        XCTAssertNotNil(tree?.items.last as? Tree.Tree)
+        XCTAssertEqual("hello.json", tree?.items.first?.name)
+        XCTAssertEqual("e0f1ee1826f922f041e557a16173f2a93835825e", tree?.items.first?.id)
+        XCTAssertEqual("mydir", tree?.items.last?.name)
+        XCTAssertEqual("213190a0fbccf0c01ebf2776edb8011fd935dbba", tree?.items.last?.id)
+    }
+    
     func testCommit0() {
         XCTAssertEqual("""
 commit 191\u{0000}tree 99ff9f93b7f0f7d300dc3c42d16cdfcdf5c2a82f
