@@ -8,13 +8,12 @@ class Hash {
         return { hash(Data(("blob \($0.count)\u{0000}" + String(decoding: $0, as: UTF8.self)).utf8)) } (try Data(contentsOf: url))
     }
     
-    func index(_ data: Data) -> Data {
+    func digest(_ data: Data) -> Data {
         _ = data.withUnsafeBytes { CC_SHA1($0.baseAddress, CC_LONG(data.count), &digest) }
         return Data(digest)
     }
     
     private func hash(_ data: Data) -> String {
-        _ = data.withUnsafeBytes { CC_SHA1($0.baseAddress, CC_LONG(data.count), &digest) }
-        return digest.map { String(format: "%02hhx", $0) }.joined()
+        return digest(data).map { String(format: "%02hhx", $0) }.joined()
     }
 }
