@@ -53,4 +53,17 @@ This is my first commit.
 """, String(decoding: press.decompress(try!
     Data(contentsOf: Bundle(for: TestPress.self).url(forResource: "commit0", withExtension: nil)!)), as: UTF8.self))
     }
+    
+    func testCommit1() {
+        XCTAssertEqual("""
+commit 232\u{0000}tree 250202b9788cc1edd675dabec0081004179475f8
+parent 0cbd117f7fe2ec884168863af047e8c89e71aaf1
+author vauxhall <zero.griffin@gmail.com> 1554641683 +0200
+committer vauxhall <zero.griffin@gmail.com> 1554641683 +0200
+
+My second commit.
+
+""", String(decoding: press.decompress(try!
+    Data(contentsOf: Bundle(for: TestPress.self).url(forResource: "commit1", withExtension: nil)!)), as: UTF8.self))
+    }
 }
