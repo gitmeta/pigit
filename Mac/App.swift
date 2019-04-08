@@ -15,11 +15,6 @@ import AppKit
         backgroundColor = .black
         NSApp.delegate = self
         
-        let select = Button("Select", target: self, action: #selector(self.select))
-        let open = Button("Open", target: self, action: #selector(self.open))
-        let create = Button("Create", target: self, action: #selector(self.create))
-        let delete = Button("Delete", target: self, action: #selector(self.delete))
-        
         let border = NSView()
         border.translatesAutoresizingMaskIntoConstraints = false
         border.wantsLayer = true
@@ -31,7 +26,11 @@ import AppKit
         self.console = console
         
         var left = contentView!.leftAnchor
-        [select, open, create, delete].forEach {
+        [Button("Select", target: self, action: #selector(self.select)),
+         Button("Select", target: self, action: #selector(self.select)),
+         Button("Create", target: self, action: #selector(self.create)),
+         Button("Delete", target: self, action: #selector(self.delete)),
+         Button("Status", target: self, action: #selector(self.status))].forEach {
             contentView!.addSubview($0)
             $0.bottomAnchor.constraint(equalTo: border.topAnchor, constant: -10).isActive = true
             $0.leftAnchor.constraint(equalTo: left, constant: 10).isActive = true
@@ -66,43 +65,6 @@ import AppKit
         Git.repository(url) {
             if $0 {
                 self.console.log("This is a repository")
-                
-                let data = try! Data(contentsOf:url.appendingPathComponent(".git/index"))
-                print(data.subdata(in: 0..<4).map { String(format: "%02hhx", $0) }.joined())
-                print(String(decoding: data.subdata(in: 0..<4), as: UTF8.self))
-//                print(String(decoding: data.subdata(in: 4..<8), as: UTF8.self))
-                print(data.subdata(in: 8..<12).map { String(format: "%02hhx", $0) }.joined())
-                print(data.subdata(in: 12..<16).map { String(format: "%02hhx", $0) }.joined())
-//                print(String(decoding: data.subdata(in: 12..<16), as: UTF8.self))
-//                print(String(decoding: data.subdata(in: 8..<12), as: UTF8.self))
-                
-//                print(String(bytes: data.subdata(in: 36..<40), encoding: .ascii))
-//                print(data.subdata(in: 28..<32).map { String(format: "%02hhx", $0) }.joined())
-//                print(data.subdata(in: 32..<36).map { String(format: "%02hhx", $0) }.joined())
-                print(data.subdata(in: 36..<40).map { String(format: "%x", $0) }.joined())
-//                print(data.subdata(in: 40..<44).map { String(format: "%02hhx", $0) }.joined())
-//                print(data.subdata(in: 44..<48).map { String(format: "%02hhx", $0) }.joined())
-//                print(data.subdata(in: 48..<52).map { String(format: "%02hhx", $0) }.joined())
-                
-//                print(String(data.subdata(in: 12..<16).withUnsafeBytes { $0.baseAddress!.bindMemory(to: Int32.self, capacity: 1).pointee }))
-                
-                print(String(data.subdata(in: 38..<39).withUnsafeBytes { $0.baseAddress!.bindMemory(to: UInt8.self, capacity: 1).pointee }))
-                var s = String()
-                for i in 36..<40 {
-                    s += String(data.subdata(in: i..<i+1).withUnsafeBytes { $0.baseAddress!.bindMemory(to: UInt8.self, capacity: 1).pointee })
-                }
-                
-//                print(s)
-                
-//                print(data.subdata(in: 52..<72).map { String(format: "%02hhx", $0) }.joined())
-                
-                
-//                print((try? Data(contentsOf:url.appendingPathComponent(".git/index")))?.count)
-//                print((try? Data(contentsOf:url.appendingPathComponent(".git/index")))?.map { String(format: "%02hhx", $0) }.joined())
-//                print((try? Data(contentsOf:url.appendingPathComponent(".git/index")))?.printableAscii)
-//                print(try? String(contentsOf: url.appendingPathComponent(".git/index"), encoding: .utf32LittleEndian))
-                
-                
             } else {
                 self.console.log("Not a repository")
             }
@@ -153,21 +115,8 @@ import AppKit
             self.repository = nil
         }
     }
-}
-
-extension UInt8 {
-    var printableAscii : String {
-        switch self {
-        case 0..<32:    return "^" + (self + 64).printableAscii
-        case 127:       return "^?"
-        case 32..<128:  return String(Character(UnicodeScalar(self)))
-        default:        return "M-" + (self & 127).printableAscii
-        }
-    }
-}
-
-extension Collection where Element == UInt8 {
-    var printableAscii : String {
-        return self.map { $0.printableAscii } .joined()
+    
+    @objc private func status() {
+        guard let repository = self.repository else { return }
     }
 }

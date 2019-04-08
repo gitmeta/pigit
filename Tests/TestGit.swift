@@ -21,7 +21,7 @@ class TestGit: XCTestCase {
             XCTAssertFalse($0)
             expect.fulfill()
         }
-        waitForExpectations(timeout: 1, handler: nil)
+        waitForExpectations(timeout: 1)
     }
     
     func testRepository() {
@@ -34,7 +34,7 @@ class TestGit: XCTestCase {
                 expect.fulfill()
             }
         }
-        waitForExpectations(timeout: 1, handler: nil)
+        waitForExpectations(timeout: 1)
     }
     
     func testCreate() {
@@ -63,7 +63,7 @@ class TestGit: XCTestCase {
             XCTAssertTrue(content.contains("ref: refs/"))
             expect.fulfill()
         }
-        waitForExpectations(timeout: 1, handler: nil)
+        waitForExpectations(timeout: 1)
     }
     
     func testDelete() {
@@ -76,7 +76,7 @@ class TestGit: XCTestCase {
                 expect.fulfill()
             }
         }
-        waitForExpectations(timeout: 1, handler: nil)
+        waitForExpectations(timeout: 1)
     }
     
     func testCreateFailsIfAlreadyExists() {
@@ -89,7 +89,7 @@ class TestGit: XCTestCase {
                 expect.fulfill()
             })
         }
-        waitForExpectations(timeout: 1, handler: nil)
+        waitForExpectations(timeout: 1)
     }
     
     func testOpenFails() {
@@ -99,7 +99,7 @@ class TestGit: XCTestCase {
             
             expect.fulfill()
         })
-        waitForExpectations(timeout: 1, handler: nil)
+        waitForExpectations(timeout: 1)
     }
     
     func testOpen() {
@@ -111,7 +111,7 @@ class TestGit: XCTestCase {
                 expect.fulfill()
             }
         }
-        waitForExpectations(timeout: 1, handler: nil)
+        waitForExpectations(timeout: 1)
     }
     
     private func clear() {

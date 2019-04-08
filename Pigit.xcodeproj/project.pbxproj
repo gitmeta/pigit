@@ -16,7 +16,6 @@
 		20409F382251E2810055C5DE /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20409F352251E2800055C5DE /* App.swift */; };
 		20409F3E2251E2890055C5DE /* Mac.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20409F3B2251E2890055C5DE /* Mac.storyboard */; };
 		20409F402251E2890055C5DE /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20409F3D2251E2890055C5DE /* App.swift */; };
-		20409F442251E2920055C5DE /* TestRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20409F422251E2910055C5DE /* TestRepository.swift */; };
 		205826AC225A1D87002D34F8 /* commit0 in Resources */ = {isa = PBXBuildFile; fileRef = 205826AB225A1D87002D34F8 /* commit0 */; };
 		205826AE225A2072002D34F8 /* tree1 in Resources */ = {isa = PBXBuildFile; fileRef = 205826AD225A2072002D34F8 /* tree1 */; };
 		20681243225A247700A6D345 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20681242225A247700A6D345 /* Tree.swift */; };
@@ -36,6 +35,9 @@
 		20C165D2225B179C00280A04 /* commit1 in Resources */ = {isa = PBXBuildFile; fileRef = 20C165D1225B179C00280A04 /* commit1 */; };
 		20C165D4225B22DF00280A04 /* Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C165D3225B22DF00280A04 /* Commit.swift */; };
 		20C165D5225B22DF00280A04 /* Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C165D3225B22DF00280A04 /* Commit.swift */; };
+		20C165D7225B3D3800280A04 /* TestStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C165D6225B3D3800280A04 /* TestStatus.swift */; };
+		20C165D9225B440100280A04 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C165D8225B440100280A04 /* Status.swift */; };
+		20C165DA225B440100280A04 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C165D8225B440100280A04 /* Status.swift */; };
 		20E716C02251EF460081E7FC /* TestGit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716BF2251EF460081E7FC /* TestGit.swift */; };
 		20E716C72251F0030081E7FC /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716C52251F0030081E7FC /* Repository.swift */; };
 		20E716C82251F0030081E7FC /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716C52251F0030081E7FC /* Repository.swift */; };
@@ -103,7 +105,6 @@
 		20409F3B2251E2890055C5DE /* Mac.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mac.storyboard; sourceTree = "<group>"; };
 		20409F3C2251E2890055C5DE /* Mac.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Mac.plist; sourceTree = "<group>"; };
 		20409F3D2251E2890055C5DE /* App.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		20409F422251E2910055C5DE /* TestRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRepository.swift; sourceTree = "<group>"; };
 		20409F432251E2910055C5DE /* Tests.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Tests.plist; sourceTree = "<group>"; };
 		20409F462251E2A40055C5DE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		20409F472251E2A40055C5DE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -125,6 +126,8 @@
 		20980A852258E795004540B1 /* blob0 */ = {isa = PBXFileReference; lastKnownFileType = file; path = blob0; sourceTree = "<group>"; };
 		20C165D1225B179C00280A04 /* commit1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = commit1; sourceTree = "<group>"; };
 		20C165D3225B22DF00280A04 /* Commit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commit.swift; sourceTree = "<group>"; };
+		20C165D6225B3D3800280A04 /* TestStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStatus.swift; sourceTree = "<group>"; };
+		20C165D8225B440100280A04 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		20DB2A52225344E100AE5D99 /* Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mac.entitlements; sourceTree = "<group>"; };
 		20E716BF2251EF460081E7FC /* TestGit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGit.swift; sourceTree = "<group>"; };
 		20E716C52251F0030081E7FC /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -244,7 +247,7 @@
 				201739B022535E8E00E7EB9D /* TestHasher.swift */,
 				20F0FCB622539466004293DB /* TestIndex.swift */,
 				20980A812258DCF5004540B1 /* TestPress.swift */,
-				20409F422251E2910055C5DE /* TestRepository.swift */,
+				20C165D6225B3D3800280A04 /* TestStatus.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				20980A7E2258DADE004540B1 /* Press.swift */,
 				20E716C52251F0030081E7FC /* Repository.swift */,
 				20681242225A247700A6D345 /* Tree.swift */,
+				20C165D8225B440100280A04 /* Status.swift */,
 			);
 			path = Pigit;
 			sourceTree = "<group>";
@@ -500,6 +504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20C165D4225B22DF00280A04 /* Commit.swift in Sources */,
+				20C165D9225B440100280A04 /* Status.swift in Sources */,
 				20E716C92251F0030081E7FC /* Git.swift in Sources */,
 				201739B3225361CB00E7EB9D /* Hasher.swift in Sources */,
 				20980A7F2258DADE004540B1 /* Press.swift in Sources */,
@@ -516,6 +521,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20C165D5225B22DF00280A04 /* Commit.swift in Sources */,
+				20C165DA225B440100280A04 /* Status.swift in Sources */,
 				20E716CA2251F0030081E7FC /* Git.swift in Sources */,
 				201739B4225361CB00E7EB9D /* Hasher.swift in Sources */,
 				20980A802258DADE004540B1 /* Press.swift in Sources */,
@@ -535,7 +541,7 @@
 				20980A822258DCF5004540B1 /* TestPress.swift in Sources */,
 				20E716C02251EF460081E7FC /* TestGit.swift in Sources */,
 				20F0FCB722539466004293DB /* TestIndex.swift in Sources */,
-				20409F442251E2920055C5DE /* TestRepository.swift in Sources */,
+				20C165D7225B3D3800280A04 /* TestStatus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
