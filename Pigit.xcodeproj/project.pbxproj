@@ -34,6 +34,8 @@
 		20980A842258DDD0004540B1 /* tree0 in Resources */ = {isa = PBXBuildFile; fileRef = 20980A832258DDD0004540B1 /* tree0 */; };
 		20980A862258E795004540B1 /* blob0 in Resources */ = {isa = PBXBuildFile; fileRef = 20980A852258E795004540B1 /* blob0 */; };
 		20C165D2225B179C00280A04 /* commit1 in Resources */ = {isa = PBXBuildFile; fileRef = 20C165D1225B179C00280A04 /* commit1 */; };
+		20C165D4225B22DF00280A04 /* Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C165D3225B22DF00280A04 /* Commit.swift */; };
+		20C165D5225B22DF00280A04 /* Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C165D3225B22DF00280A04 /* Commit.swift */; };
 		20E716C02251EF460081E7FC /* TestGit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716BF2251EF460081E7FC /* TestGit.swift */; };
 		20E716C72251F0030081E7FC /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716C52251F0030081E7FC /* Repository.swift */; };
 		20E716C82251F0030081E7FC /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716C52251F0030081E7FC /* Repository.swift */; };
@@ -122,6 +124,7 @@
 		20980A832258DDD0004540B1 /* tree0 */ = {isa = PBXFileReference; lastKnownFileType = file; path = tree0; sourceTree = "<group>"; };
 		20980A852258E795004540B1 /* blob0 */ = {isa = PBXFileReference; lastKnownFileType = file; path = blob0; sourceTree = "<group>"; };
 		20C165D1225B179C00280A04 /* commit1 */ = {isa = PBXFileReference; lastKnownFileType = file; path = commit1; sourceTree = "<group>"; };
+		20C165D3225B22DF00280A04 /* Commit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commit.swift; sourceTree = "<group>"; };
 		20DB2A52225344E100AE5D99 /* Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mac.entitlements; sourceTree = "<group>"; };
 		20E716BF2251EF460081E7FC /* TestGit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGit.swift; sourceTree = "<group>"; };
 		20E716C52251F0030081E7FC /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -256,6 +259,7 @@
 		20E716C42251F0030081E7FC /* Pigit */ = {
 			isa = PBXGroup;
 			children = (
+				20C165D3225B22DF00280A04 /* Commit.swift */,
 				20E716D82252564E0081E7FC /* Failure.swift */,
 				20E716C62251F0030081E7FC /* Git.swift */,
 				201739B2225361CB00E7EB9D /* Hasher.swift */,
@@ -495,6 +499,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20C165D4225B22DF00280A04 /* Commit.swift in Sources */,
 				20E716C92251F0030081E7FC /* Git.swift in Sources */,
 				201739B3225361CB00E7EB9D /* Hasher.swift in Sources */,
 				20980A7F2258DADE004540B1 /* Press.swift in Sources */,
@@ -510,6 +515,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20C165D5225B22DF00280A04 /* Commit.swift in Sources */,
 				20E716CA2251F0030081E7FC /* Git.swift in Sources */,
 				201739B4225361CB00E7EB9D /* Hasher.swift in Sources */,
 				20980A802258DADE004540B1 /* Press.swift in Sources */,

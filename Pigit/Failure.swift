@@ -18,6 +18,10 @@ public struct Failure: LocalizedError {
         public static let unreadable = Failure("Unable to read tree.")
     }
     
+    public struct Commit {
+        public static let unreadable = Failure("Unable to read commit.")
+    }
+    
     public var errorDescription: String? { return "Error: " + string }
     private let string: String
     private init(_ string: String) { self.string = string }

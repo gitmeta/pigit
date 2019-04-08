@@ -2,23 +2,23 @@ import Foundation
 
 struct Index {
     struct Entry {
-        var created = Date()
-        var modified = Date()
-        var container = String()
-        var name = String()
-        var size = 0
-        var device = 0
-        var inode = 0
-        var user = 0
-        var group = 0
-        var conflicts = false
+        fileprivate(set) var created = Date()
+        fileprivate(set) var modified = Date()
+        fileprivate(set) var container = String()
+        fileprivate(set) var name = String()
+        fileprivate(set) var size = 0
+        fileprivate(set) var device = 0
+        fileprivate(set) var inode = 0
+        fileprivate(set) var user = 0
+        fileprivate(set) var group = 0
+        fileprivate(set) var conflicts = false
     }
     
     struct Tree {
-        var id = String()
-        var name = String()
-        var entries = 0
-        var subtrees = 0
+        fileprivate(set) var id = String()
+        fileprivate(set) var name = String()
+        fileprivate(set) var entries = 0
+        fileprivate(set) var subtrees = 0
     }
     
     private(set) var id = String()

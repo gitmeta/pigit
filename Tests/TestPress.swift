@@ -66,4 +66,23 @@ My second commit.
 """, String(decoding: press.decompress(try!
     Data(contentsOf: Bundle(for: TestPress.self).url(forResource: "commit1", withExtension: nil)!)), as: UTF8.self))
     }
+    
+    func testParseCommit0() {
+        let commit = try? Commit(press.decompress(try! Data(contentsOf: Bundle(for: TestPress.self).url(
+            forResource: "commit0", withExtension: nil)!)))
+        XCTAssertNil(commit?.parent)
+        XCTAssertEqual("99ff9f93b7f0f7d300dc3c42d16cdfcdf5c2a82f", commit?.tree)
+        XCTAssertEqual("vauxhall", commit?.author.name)
+        XCTAssertEqual("zero.griffin@gmail.com", commit?.author.email)
+        XCTAssertEqual("vauxhall", commit?.committer.name)
+        XCTAssertEqual("zero.griffin@gmail.com", commit?.committer.email)
+        XCTAssertEqual(Date(timeIntervalSince1970: 1554638195), commit?.author.date)
+        XCTAssertEqual(Date(timeIntervalSince1970: 1554638195), commit?.committer.date)
+    }
+    
+    func testParseCommit1() {
+        let commit = try? Commit(press.decompress(try! Data(contentsOf: Bundle(for: TestPress.self).url(
+            forResource: "commit1", withExtension: nil)!)))
+        XCTAssertEqual("0cbd117f7fe2ec884168863af047e8c89e71aaf1", commit?.parent)
+    }
 }
