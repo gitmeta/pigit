@@ -1,14 +1,14 @@
 import XCTest
 @testable import Pigit
 
-class TestHasher: XCTestCase {
-    private var hasher: Hasher!
+class TestHash: XCTestCase {
+    private var hasher: Hash!
     private var url: URL!
     
     override func setUp() {
         url = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("file.json")
         try! "hello world\n".write(to: url, atomically: true, encoding: .utf8)
-        hasher = Hasher()
+        hasher = Hash()
     }
     
     override func tearDown() {

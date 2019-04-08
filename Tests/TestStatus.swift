@@ -7,7 +7,7 @@ class TestStatus: XCTestCase {
     
     override func setUp() {
         url = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("test")
-        try! FileManager.default.createDirectory(at: url, withIntermediateDirectories: false)
+        try! FileManager.default.createDirectory(at: url, withIntermediateDirectories: true)
         repository = Repository(url)
     }
     
@@ -26,6 +26,19 @@ class TestStatus: XCTestCase {
                 XCTAssertEqual(Thread.main, Thread.current)
                 expect.fulfill()
             }
+        }
+        waitForExpectations(timeout: 1)
+    }
+    
+    func testUntracked() {
+        let expect = expectation(description: "")
+        try! Data("hello world".utf8).write(to: url.appendingPathComponent("myfile.txt"))
+        repository.status {
+            XCTAssertEqual(1, $0.untracked.count)
+            XCTAssertTrue($0.added.isEmpty)
+            XCTAssertTrue($0.modified.isEmpty)
+            XCTAssertTrue($0.deleted.isEmpty)
+            expect.fulfill()
         }
         waitForExpectations(timeout: 1)
     }

@@ -22,7 +22,7 @@ struct Index {
     }
     
     private(set) var id = String()
-    private(set) var version = Int()
+    private(set) var version = 2
     private(set) var entries = [Entry]()
     private(set) var trees = [Tree]()
     
@@ -43,6 +43,20 @@ struct Index {
         index.trees = tree
         index.id = id
         return index
+    }
+    
+    static func new(_ url: URL) -> Index {
+        let index = Index()
+        save(index, url: url)
+        return index
+    }
+    
+    static func save(_ index: Index, url: URL) {
+        let blob = Blob()
+        blob.add(UInt32(index.version))
+        blob.add(UInt32(index.entries.count))
+        blob.hash()
+        try? blob.data.write(to: url.appendingPathComponent(".git/index"), options: .atomic)
     }
     
     private static func entry(_ parse: Parse) throws -> Entry {

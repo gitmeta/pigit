@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		201739B122535E8E00E7EB9D /* TestHasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201739B022535E8E00E7EB9D /* TestHasher.swift */; };
-		201739B3225361CB00E7EB9D /* Hasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201739B2225361CB00E7EB9D /* Hasher.swift */; };
-		201739B4225361CB00E7EB9D /* Hasher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201739B2225361CB00E7EB9D /* Hasher.swift */; };
+		201739B122535E8E00E7EB9D /* TestHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201739B022535E8E00E7EB9D /* TestHash.swift */; };
+		201739B3225361CB00E7EB9D /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201739B2225361CB00E7EB9D /* Hash.swift */; };
+		201739B4225361CB00E7EB9D /* Hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201739B2225361CB00E7EB9D /* Hash.swift */; };
 		201B21E822561938005F3ED9 /* Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201B21E722561938005F3ED9 /* Parse.swift */; };
 		201B21E922561938005F3ED9 /* Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 201B21E722561938005F3ED9 /* Parse.swift */; };
 		20409F362251E2810055C5DE /* iOS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20409F332251E2800055C5DE /* iOS.storyboard */; };
@@ -38,6 +38,9 @@
 		20C165D7225B3D3800280A04 /* TestStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C165D6225B3D3800280A04 /* TestStatus.swift */; };
 		20C165D9225B440100280A04 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C165D8225B440100280A04 /* Status.swift */; };
 		20C165DA225B440100280A04 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C165D8225B440100280A04 /* Status.swift */; };
+		20C165DC225B5B4000280A04 /* TestAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C165DB225B5B4000280A04 /* TestAdd.swift */; };
+		20C165DE225B665A00280A04 /* Blob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C165DD225B665A00280A04 /* Blob.swift */; };
+		20C165DF225B665A00280A04 /* Blob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C165DD225B665A00280A04 /* Blob.swift */; };
 		20E716C02251EF460081E7FC /* TestGit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716BF2251EF460081E7FC /* TestGit.swift */; };
 		20E716C72251F0030081E7FC /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716C52251F0030081E7FC /* Repository.swift */; };
 		20E716C82251F0030081E7FC /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E716C52251F0030081E7FC /* Repository.swift */; };
@@ -95,8 +98,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		201739B022535E8E00E7EB9D /* TestHasher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHasher.swift; sourceTree = "<group>"; };
-		201739B2225361CB00E7EB9D /* Hasher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hasher.swift; sourceTree = "<group>"; };
+		201739B022535E8E00E7EB9D /* TestHash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHash.swift; sourceTree = "<group>"; };
+		201739B2225361CB00E7EB9D /* Hash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hash.swift; sourceTree = "<group>"; };
 		201B21E722561938005F3ED9 /* Parse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parse.swift; sourceTree = "<group>"; };
 		20409F302251E2750055C5DE /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20409F332251E2800055C5DE /* iOS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iOS.storyboard; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 		20C165D3225B22DF00280A04 /* Commit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commit.swift; sourceTree = "<group>"; };
 		20C165D6225B3D3800280A04 /* TestStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStatus.swift; sourceTree = "<group>"; };
 		20C165D8225B440100280A04 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		20C165DB225B5B4000280A04 /* TestAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAdd.swift; sourceTree = "<group>"; };
+		20C165DD225B665A00280A04 /* Blob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blob.swift; sourceTree = "<group>"; };
 		20DB2A52225344E100AE5D99 /* Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mac.entitlements; sourceTree = "<group>"; };
 		20E716BF2251EF460081E7FC /* TestGit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestGit.swift; sourceTree = "<group>"; };
 		20E716C52251F0030081E7FC /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -243,8 +248,9 @@
 				205826AD225A2072002D34F8 /* tree1 */,
 				20681245225A2ACC00A6D345 /* tree2 */,
 				20409F432251E2910055C5DE /* Tests.plist */,
+				20C165DB225B5B4000280A04 /* TestAdd.swift */,
 				20E716BF2251EF460081E7FC /* TestGit.swift */,
-				201739B022535E8E00E7EB9D /* TestHasher.swift */,
+				201739B022535E8E00E7EB9D /* TestHash.swift */,
 				20F0FCB622539466004293DB /* TestIndex.swift */,
 				20980A812258DCF5004540B1 /* TestPress.swift */,
 				20C165D6225B3D3800280A04 /* TestStatus.swift */,
@@ -262,16 +268,17 @@
 		20E716C42251F0030081E7FC /* Pigit */ = {
 			isa = PBXGroup;
 			children = (
+				20C165DD225B665A00280A04 /* Blob.swift */,
 				20C165D3225B22DF00280A04 /* Commit.swift */,
 				20E716D82252564E0081E7FC /* Failure.swift */,
 				20E716C62251F0030081E7FC /* Git.swift */,
-				201739B2225361CB00E7EB9D /* Hasher.swift */,
+				201739B2225361CB00E7EB9D /* Hash.swift */,
 				20F0FCB8225395CB004293DB /* Index.swift */,
 				201B21E722561938005F3ED9 /* Parse.swift */,
 				20980A7E2258DADE004540B1 /* Press.swift */,
 				20E716C52251F0030081E7FC /* Repository.swift */,
-				20681242225A247700A6D345 /* Tree.swift */,
 				20C165D8225B440100280A04 /* Status.swift */,
+				20681242225A247700A6D345 /* Tree.swift */,
 			);
 			path = Pigit;
 			sourceTree = "<group>";
@@ -506,7 +513,8 @@
 				20C165D4225B22DF00280A04 /* Commit.swift in Sources */,
 				20C165D9225B440100280A04 /* Status.swift in Sources */,
 				20E716C92251F0030081E7FC /* Git.swift in Sources */,
-				201739B3225361CB00E7EB9D /* Hasher.swift in Sources */,
+				201739B3225361CB00E7EB9D /* Hash.swift in Sources */,
+				20C165DE225B665A00280A04 /* Blob.swift in Sources */,
 				20980A7F2258DADE004540B1 /* Press.swift in Sources */,
 				20E716D92252564E0081E7FC /* Failure.swift in Sources */,
 				20E716C72251F0030081E7FC /* Repository.swift in Sources */,
@@ -523,7 +531,8 @@
 				20C165D5225B22DF00280A04 /* Commit.swift in Sources */,
 				20C165DA225B440100280A04 /* Status.swift in Sources */,
 				20E716CA2251F0030081E7FC /* Git.swift in Sources */,
-				201739B4225361CB00E7EB9D /* Hasher.swift in Sources */,
+				201739B4225361CB00E7EB9D /* Hash.swift in Sources */,
+				20C165DF225B665A00280A04 /* Blob.swift in Sources */,
 				20980A802258DADE004540B1 /* Press.swift in Sources */,
 				20E716DA2252564E0081E7FC /* Failure.swift in Sources */,
 				20E716C82251F0030081E7FC /* Repository.swift in Sources */,
@@ -537,11 +546,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				201739B122535E8E00E7EB9D /* TestHasher.swift in Sources */,
+				201739B122535E8E00E7EB9D /* TestHash.swift in Sources */,
 				20980A822258DCF5004540B1 /* TestPress.swift in Sources */,
 				20E716C02251EF460081E7FC /* TestGit.swift in Sources */,
 				20F0FCB722539466004293DB /* TestIndex.swift in Sources */,
 				20C165D7225B3D3800280A04 /* TestStatus.swift in Sources */,
+				20C165DC225B5B4000280A04 /* TestAdd.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

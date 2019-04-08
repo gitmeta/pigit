@@ -58,6 +58,7 @@ class Parse {
     }
     
     func tree() throws -> Int {
+        guard data.count > index + 4 else { throw Failure.Index.malformed }
         return String(decoding: data.subdata(in: index ..< index + 4), as: UTF8.self) == "TREE" ? try {
                 index += 4
                 return try number() + index
